@@ -1,0 +1,38 @@
+{
+  "aggregate_pilot": {
+    "experiment_id": "agg_mathura_1D_CNN_consumption_only",
+    "device": "cpu",
+    "train_samples": 6303,
+    "batch_size": 64,
+    "mean_epoch_duration_sec": 1.0448,
+    "mean_throughput_samples_per_sec": 6083.1,
+    "final_val_loss": 0.02855,
+    "epoch_durations": [
+      1.0291,
+      0.9359,
+      1.1695
+    ],
+    "val_losses": [
+      0.02301,
+      0.027364,
+      0.02855
+    ]
+  },
+  "individual_pooled_pilot": {
+    "experiment_id": "ind_mathura_1D_CNN_consumption_only_pilot",
+    "device": "cpu",
+    "train_samples": 139529,
+    "batch_size": 256,
+    "mean_epoch_duration_sec": 15.5525,
+    "mean_throughput_samples_per_sec": 8972.4,
+    "final_val_loss": 0.15164,
+    "epoch_durations": [
+      15.7038,
+      15.4011
+    ],
+    "val_losses": [
+      0.146734,
+      0.15164
+    ]
+  }
+}

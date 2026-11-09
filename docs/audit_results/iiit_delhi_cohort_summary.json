@@ -1,0 +1,10 @@
+{
+  "dataset": "IIIT Delhi",
+  "total_unique_timestamps": 27161,
+  "primary_full_cohort_19_apts": 599,
+  "primary_full_cohort_pct": 2.21,
+  "sensitivity_cohort_18_apts": 2400,
+  "sensitivity_cohort_pct": 8.84,
+  "incomplete_lt18_apts": 24162,
+  "incomplete_pct": 88.96
+}

@@ -1,0 +1,491 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 5420047,
+    "identifier": "DVN/GOCHJH",
+    "persistentUrl": "https://doi.org/10.7910/DVN/GOCHJH",
+    "protocol": "doi",
+    "authority": "10.7910",
+    "separator": "/",
+    "publisher": "Harvard Dataverse",
+    "publicationDate": "2021-11-22",
+    "storageIdentifier": "s3://10.7910/DVN/GOCHJH",
+    "effectiveDatasetFileCountLimit": 1000,
+    "datasetFileUploadsAvailable": 990,
+    "datasetType": "dataset",
+    "locks": [],
+    "latestVersion": {
+      "id": 283987,
+      "datasetId": 5420047,
+      "datasetPersistentId": "doi:10.7910/DVN/GOCHJH",
+      "datasetType": "dataset",
+      "storageIdentifier": "s3://10.7910/DVN/GOCHJH",
+      "versionNumber": 2,
+      "internalVersionNumber": 7,
+      "versionMinorNumber": 0,
+      "versionState": "RELEASED",
+      "latestVersionPublishingState": "RELEASED",
+      "deaccessionLink": "",
+      "UNF": "UNF:6:z1sZZsHOV9ZkpL169brx7w==",
+      "lastUpdateTime": "2021-11-22T09:43:22Z",
+      "releaseTime": "2021-11-22T09:43:22Z",
+      "createTime": "2021-11-22T09:21:09Z",
+      "publicationDate": "2021-11-22",
+      "citationDate": "2021-11-22",
+      "effectiveDatasetFileCountLimit": 1000,
+      "datasetFileUploadsAvailable": 990,
+      "license": {
+        "name": "CC0 1.0",
+        "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+        "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+        "rightsIdentifier": "CC0-1.0",
+        "rightsIdentifierScheme": "SPDX",
+        "schemeUri": "https://spdx.org/licenses/",
+        "languageCode": "en"
+      },
+      "fileAccessRequest": false,
+      "metadataBlocks": {
+        "citation": {
+          "displayName": "Citation Metadata",
+          "name": "citation",
+          "fields": [
+            {
+              "typeName": "title",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "High frequency smart meter data from two districts in India (Mathura and Bareilly)"
+            },
+            {
+              "typeName": "author",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "authorName": {
+                    "typeName": "authorName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Agrawal, Shalu"
+                  },
+                  "authorAffiliation": {
+                    "typeName": "authorAffiliation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Council on Energy, Environment and Water"
+                  }
+                },
+                {
+                  "authorName": {
+                    "typeName": "authorName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Mani, Sunil"
+                  },
+                  "authorAffiliation": {
+                    "typeName": "authorAffiliation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Council on Energy, Environment and Water"
+                  }
+                },
+                {
+                  "authorName": {
+                    "typeName": "authorName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Ganesan, Karthik"
+                  },
+                  "authorAffiliation": {
+                    "typeName": "authorAffiliation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Council on Energy, Environment and Water"
+                  }
+                },
+                {
+                  "authorName": {
+                    "typeName": "authorName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Jain, Abhishek"
+                  },
+                  "authorAffiliation": {
+                    "typeName": "authorAffiliation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Council on Energy, Environment and Water"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "datasetContact",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "datasetContactName": {
+                    "typeName": "datasetContactName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Agrawal, Shalu"
+                  },
+                  "datasetContactEmail": {
+                    "typeName": "datasetContactEmail",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "data@ceew.in"
+                  }
+                },
+                {
+                  "datasetContactName": {
+                    "typeName": "datasetContactName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Mani, Sunil"
+                  },
+                  "datasetContactEmail": {
+                    "typeName": "datasetContactEmail",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "data@ceew.in"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "dsDescription",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "dsDescriptionValue": {
+                    "typeName": "dsDescriptionValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "This high-frequency three minutes interval smart meter dataset provides information on urban household electricity consumption patterns from nearly 100 smart meters installed in Mathura and Bareilly districts of Uttar Pradesh, India from May 2019 to October 2021. Apart from this, the data also provides information on the situation of power supply (including hours of power supply, voltage, current withdrawn and other related variables). The data can have various use cases for researchers and practitioners working in the power sector domain. For instance, power distribution companies (discoms) can utilise the smart meter data for effective service delivery and demand management."
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "subject",
+              "multiple": true,
+              "typeClass": "controlledVocabulary",
+              "value": [
+                "Social Sciences"
+              ]
+            },
+            {
+              "typeName": "keyword",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Smart meter"
+                  }
+                },
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "India"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "publication",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "publicationCitation": {
+                    "typeName": "publicationCitation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Agrawal, Shalu, Sunil Mani, Karthik Ganesan, and Abhishek Jain. 2020.  What Smart Meters Can Tell Us? Insights on Electricity Supply and Use in Mathura and Bareilly Households. New Delhi: Council on Energy, Environment and Water."
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "depositor",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Council on Energy, Environment and Water"
+            },
+            {
+              "typeName": "dateOfDeposit",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "2021-11-19"
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "label": "CEEW -  ReadMe.txt",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425483,
+            "persistentId": "",
+            "filename": "CEEW -  ReadMe.txt",
+            "contentType": "text/plain",
+            "friendlyType": "Plain Text",
+            "filesize": 4436,
+            "storageIdentifier": "s3://dvn-cloud:17d46f94685-f14305525fa0",
+            "rootDataFileId": 5425413,
+            "previousDataFileId": 5425413,
+            "md5": "ae3ed7fc5f4cc7c8c8617af6e45d7a43",
+            "checksum": {
+              "type": "MD5",
+              "value": "ae3ed7fc5f4cc7c8c8617af6e45d7a43"
+            },
+            "tabularData": false,
+            "creationDate": "2021-11-22",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "CEEW - Smart meter data Bareilly 2019.tab",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425325,
+            "persistentId": "",
+            "filename": "CEEW - Smart meter data Bareilly 2019.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 145477114,
+            "storageIdentifier": "s3://dvn-cloud:17d4481a16e-6b03e482cf80",
+            "originalFileFormat": "text/csv",
+            "originalFormatLabel": "Comma Separated Values",
+            "originalFileSize": 142557800,
+            "originalFileName": "SM Cleaned Data BR2019.csv",
+            "UNF": "UNF:6:r7TtXsOR7pDcVpzAYWVx8g==",
+            "rootDataFileId": -1,
+            "md5": "ef428b41946235a30286758eda3633f9",
+            "checksum": {
+              "type": "MD5",
+              "value": "ef428b41946235a30286758eda3633f9"
+            },
+            "tabularData": true,
+            "creationDate": "2021-11-21",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "CEEW - Smart meter data Bareilly 2020.csv",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425310,
+            "persistentId": "",
+            "filename": "CEEW - Smart meter data Bareilly 2020.csv",
+            "contentType": "text/csv",
+            "friendlyType": "Comma Separated Values",
+            "filesize": 323383946,
+            "storageIdentifier": "s3://dvn-cloud:17d438383a0-ec6ba01199ae",
+            "rootDataFileId": -1,
+            "md5": "d1ede7431f8e3fdcc222cb6a79b7c953",
+            "checksum": {
+              "type": "MD5",
+              "value": "d1ede7431f8e3fdcc222cb6a79b7c953"
+            },
+            "tabularData": false,
+            "creationDate": "2021-11-21",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "CEEW - Smart meter data Bareilly 2021.csv",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425314,
+            "persistentId": "",
+            "filename": "CEEW - Smart meter data Bareilly 2021.csv",
+            "contentType": "text/csv",
+            "friendlyType": "Comma Separated Values",
+            "filesize": 192682564,
+            "storageIdentifier": "s3://dvn-cloud:17d438a1584-5e719d6d0892",
+            "rootDataFileId": -1,
+            "md5": "702bb17fde316506e6b7dac3ab0cb9b9",
+            "checksum": {
+              "type": "MD5",
+              "value": "702bb17fde316506e6b7dac3ab0cb9b9"
+            },
+            "tabularData": false,
+            "creationDate": "2021-11-21",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "CEEW - Smart meter data Bareilly Aggregated.tab",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425327,
+            "persistentId": "",
+            "filename": "CEEW - Smart meter data Bareilly Aggregated.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 1006555,
+            "storageIdentifier": "s3://dvn-cloud:17d44860263-c54918d2678c",
+            "originalFileFormat": "text/csv",
+            "originalFormatLabel": "Comma Separated Values",
+            "originalFileSize": 978437,
+            "originalFileName": "SM Cleaned Data BR Aggregated.csv",
+            "UNF": "UNF:6:YO2d2AGLpAW6HNEqbwR6Bw==",
+            "rootDataFileId": -1,
+            "md5": "4bbfaa0f0781a752e2fa4eec91bddb5b",
+            "checksum": {
+              "type": "MD5",
+              "value": "4bbfaa0f0781a752e2fa4eec91bddb5b"
+            },
+            "tabularData": true,
+            "creationDate": "2021-11-21",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "CEEW - Smart meter data Mathura 2019.csv",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425311,
+            "persistentId": "",
+            "filename": "CEEW - Smart meter data Mathura 2019.csv",
+            "contentType": "text/csv",
+            "friendlyType": "Comma Separated Values",
+            "filesize": 175494264,
+            "storageIdentifier": "s3://dvn-cloud:17d4391f9f2-d37095257f0a",
+            "rootDataFileId": -1,
+            "md5": "e481f667ac4722eeeb7566d9ca1a6aad",
+            "checksum": {
+              "type": "MD5",
+              "value": "e481f667ac4722eeeb7566d9ca1a6aad"
+            },
+            "tabularData": false,
+            "creationDate": "2021-11-21",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "CEEW - Smart meter data Mathura 2020.csv",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425313,
+            "persistentId": "",
+            "filename": "CEEW - Smart meter data Mathura 2020.csv",
+            "contentType": "text/csv",
+            "friendlyType": "Comma Separated Values",
+            "filesize": 182625294,
+            "storageIdentifier": "s3://dvn-cloud:17d43993eff-f5322d606c5f",
+            "rootDataFileId": -1,
+            "md5": "b36680e009fa8879e2757b27e64d6043",
+            "checksum": {
+              "type": "MD5",
+              "value": "b36680e009fa8879e2757b27e64d6043"
+            },
+            "tabularData": false,
+            "creationDate": "2021-11-21",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "CEEW - Smart meter data Mathura 2021.tab",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425312,
+            "persistentId": "",
+            "filename": "CEEW - Smart meter data Mathura 2021.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 27261599,
+            "storageIdentifier": "s3://dvn-cloud:17d439a4ffd-bb5b6d236b24",
+            "originalFileFormat": "text/csv",
+            "originalFormatLabel": "Comma Separated Values",
+            "originalFileSize": 26711040,
+            "originalFileName": "SM Cleaned Data MH2021.csv",
+            "UNF": "UNF:6:tKW4s0WJBGKIvyXl9ovLJw==",
+            "rootDataFileId": -1,
+            "md5": "f5cb0263f4f61a416c0b0403d17ecfa7",
+            "checksum": {
+              "type": "MD5",
+              "value": "f5cb0263f4f61a416c0b0403d17ecfa7"
+            },
+            "tabularData": true,
+            "creationDate": "2021-11-21",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "CEEW - Smart meter data Mathura Aggregated.tab",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 283987,
+          "dataFile": {
+            "id": 5425326,
+            "persistentId": "",
+            "filename": "CEEW - Smart meter data Mathura Aggregated.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 594593,
+            "storageIdentifier": "s3://dvn-cloud:17d44860ca6-dfb90f67f18e",
+            "originalFileFormat": "text/csv",
+            "originalFormatLabel": "Comma Separated Values",
+            "originalFileSize": 578103,
+            "originalFileName": "SM Cleaned Data MH Aggregated.csv",
+            "UNF": "UNF:6:Py8BnncV0Cwf+/bSzVKMxA==",
+            "rootDataFileId": -1,
+            "md5": "86f1e64db5d4387c6146e8063066b9fe",
+            "checksum": {
+              "type": "MD5",
+              "value": "86f1e64db5d4387c6146e8063066b9fe"
+            },
+            "tabularData": true,
+            "creationDate": "2021-11-21",
+            "publicationDate": "2021-11-22",
+            "lastUpdateTime": "2021-11-22T09:43:22Z",
+            "fileAccessRequest": false
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "audit_metadata": {
+    "project": "Electricity Demand Forecasting Using Deep Learning: A Comparative Study of 1D CNN, LSTM and CNN\u2013LSTM Models",
+    "audit_version": "Final Comprehensive Pre-Training Audit (Audits 1 - 10)",
+    "timestamp": "2026-11-02T13:08:00+05:30",
+    "overall_decision": "GO",
+    "total_checks_evaluated": 31,
+    "total_checks_passed": 31,
+    "total_checks_failed": 0,
+    "critical_blockers_count": 0,
+    "monitored_known_issues_count": 9
+  },
+  "audit_results_by_category": {
+    "audit_1_raw_data_and_provenance": "PASS (9 raw files hash verified, 1,077,613,531 bytes)",
+    "audit_2_target_and_feature_construction": "PASS (IIIT Delhi exp/4x kW, CEEW 5-subinterval aggregation, outage/zero-load preserved)",
+    "audit_3_weather_features": "PASS (Dual weather architecture, 5-day operational latency, backward as-of merge)",
+    "audit_4_eda_scientific_validity": "PASS (Bareilly panel populated, Mathura quadratic bounded, Pearson/Spearman reported, exploratory labels)",
+    "audit_5_sequence_generation_and_boundaries": "PASS (L=16, H=1, 4,467,924 individual sequences reconciled with 0 discrepancy, 106/106 series pass 0 overlap)",
+    "audit_6_scaling_and_leakage_prevention": "PASS (Train-only scaler fit, frozen val/test transform, 1e-5 inverse target precision)",
+    "audit_7_baselines_and_evaluation": "PASS (Naive and Seasonal baselines on identical test set, full-test vs matched-subset distinguished)",
+    "audit_8_model_architectures": "PASS (1D CNN, LSTM, CNN-LSTM balanced capacity ~52k-71k params, fixed seed 42)",
+    "audit_9_training_pipeline": "PASS (AdamW, HuberLoss, ReduceLROnPlateau, Early Stopping, best weights restored, Colab ready)",
+    "audit_10_reproducibility_and_documentation": "PASS (requirements.txt, config.yaml synchronized, 29/29 tests passing)"
+  },
+  "data_census_reconciliation": {
+    "total_individual_meters": 103,
+    "total_contiguous_sequences_L16_H1": 4467924,
+    "train_sequences_70pct": 3127497,
+    "purge_gap_sequences": 3296,
+    "val_sequences_15pct": 670140,
+    "test_sequences_remaining": 666991,
+    "discrepancy": 0
+  },
+  "boundary_purge_audit_summary": {
+    "total_series_audited": 106,
+    "series_passed_zero_overlap": 106,
+    "series_failed": 0,
+    "minimum_train_val_gap_minutes": 15.0,
+    "minimum_val_test_gap_minutes": 15.0,
+    "maximum_cross_boundary_timestamp_overlap": 0
+  },
+  "baseline_benchmark_summary": {
+    "mathura_aggregate_full_test": {
+      "test_samples": 1320,
+      "naive_rmse_kw": 1.2033,
+      "naive_wape_pct": 11.22,
+      "seasonal_coverage_pct": 46.06
+    },
+    "mathura_aggregate_matched_subset": {
+      "test_samples": 608,
+      "naive_rmse_kw": 1.2762,
+      "seasonal_rmse_kw": 1.9059,
+      "seasonal_skill_score_vs_naive": -1.2301
+    },
+    "bareilly_aggregate_full_test": {
+      "test_samples": 1257,
+      "naive_rmse_kw": 2.3063,
+      "naive_wape_pct": 8.97,
+      "seasonal_coverage_pct": 41.61
+    },
+    "bareilly_aggregate_matched_subset": {
+      "test_samples": 523,
+      "naive_rmse_kw": 2.3525,
+      "seasonal_rmse_kw": 4.8224,
+      "seasonal_skill_score_vs_naive": -3.2021
+    }
+  }
+}

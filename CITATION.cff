@@ -1,0 +1,63 @@
+cff-version: 1.2.0
+title: "Electricity Demand Forecasting Using Deep Learning: A Comparative Study of 1D CNN, LSTM and CNN-LSTM Models"
+message: "If you use this codebase, experimental methodology, or evaluation pipeline in academic work, please cite the project and the underlying public datasets listed below."
+type: software
+authors:
+  - family-names: Bhaskar
+    given-names: Raghav
+    affiliation: "Department of Electrical Engineering, Thapar Institute of Engineering & Technology, Patiala"
+date-released: "2026-04-04"
+license: MIT
+keywords:
+  - electricity demand forecasting
+  - short-term load forecasting
+  - smart meter analytics
+  - 1D convolutional neural network
+  - long short-term memory
+  - CNN-LSTM
+  - Diebold-Mariano test
+  - Indian distribution grids
+references:
+  - type: article
+    title: "Electric load forecasting based on Long Short-Term Memory network"
+    authors:
+      - family-names: Chen
+        given-names: Kunjin
+      - family-names: Chen
+        given-names: Kunlong
+      - family-names: Wang
+        given-names: Qin
+      - family-names: He
+        given-names: Ziyu
+      - family-names: Hu
+        given-names: Jun
+      - family-names: He
+        given-names: Jinliang
+    year: 2017
+  - type: data
+    title: "Smart Meter Data from Mathura and Bareilly Districts, Uttar Pradesh, India"
+    authors:
+      - family-names: Agrawal
+        given-names: Shalu
+      - family-names: Mani
+        given-names: Sunil
+      - family-names: Ganesan
+        given-names: Karthik
+      - family-names: Jain
+        given-names: Abhishek
+    institution:
+      name: "Council on Energy, Environment and Water (CEEW)"
+    year: 2021
+    doi: "10.7910/DVN/N3615P"
+  - type: article
+    title: "ERA5-Land: a state-of-the-art global reanalysis dataset for land applications"
+    authors:
+      - family-names: Muñoz-Sabater
+        given-names: Joaquín
+    journal: "Earth System Science Data"
+    volume: 13
+    issue: 9
+    start: 4349
+    end: 4383
+    year: 2021
+    doi: "10.5194/essd-13-4349-2021"

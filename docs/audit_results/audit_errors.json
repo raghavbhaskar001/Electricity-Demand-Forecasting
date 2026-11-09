@@ -1,0 +1,6 @@
+[
+  {
+    "section": "Report Generation",
+    "error": "`Import tabulate` failed.  Use pip or conda to install the tabulate package."
+  }
+]

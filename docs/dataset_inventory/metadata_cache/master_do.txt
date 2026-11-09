@@ -1,0 +1,30 @@
+
+// DIRECTORY WHERE DATA IS STORED
+global data ""	
+// DIRECTORY WHERE DO FILES ARE STORED
+global dofiles ""
+// DIRECTORY WHERE TABLES WILL BE SAVED
+global tables ""
+// DIRECTORY WHERE FIGURES WILL BE SAVED
+global figures ""
+
+// THE OUTPUT FOR TABLES 1, 2, 4, 5, 7, AND A1 CAN BE COPIED INTO A WORD FILE
+// AND CONVERTED TO A TABLE USING "INSERT -> TABLE -> CONVERT TEXT TO TABLE" 
+
+
+do $dofiles/Table_1.do
+do $dofiles/Table_2.do
+do $dofiles/Table_4.do
+do $dofiles/Table_5.do
+do $dofiles/Table_6.do
+do $dofiles/Table_7.do
+do $dofiles/Table_8.do
+do $dofiles/Table_9.do
+do $dofiles/Table_A1.do
+do $dofiles/Table_A2.do
+do $dofiles/Table_A3.do
+do $dofiles/Table_A4.do
+do $dofiles/Table_A5.do
+do $dofiles/Prepare_Figure_Data.do 	// OPTIONAL. THE DATA THAT THIS DO FILE GENERATES IS		
+									// INCLUDED AS figures_use_final.dta. 
+do $dofiles/Figures_3_A1.do

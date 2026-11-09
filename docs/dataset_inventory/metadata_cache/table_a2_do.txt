@@ -1,0 +1,22 @@
+use $data/Table_A2_Final.dta, replace
+xtset apt timestamp 
+
+xtgls lnenergy hour_temp post finpost healthpost tt tt2 tt3 i.dayofweek i.hour i.apt, ///
+	panels(h) corr(psar1) force
+outreg2 using $tables/Table_A2, keep(hour_temp post finpost healthpost) label replace ///
+	ctitle("ln(15 Minute kWh)") addtext(Household Fixed Effects,Yes,Cubic Time Trend, Yes, Week Fixed Effects, No, Day of Week Fixed Effect, Yes, Hour of Day Fixed Effects, Yes) 
+
+xtgls lnenergy hour_temp post finpost healthpost i.week i.dayofweek i.hour i.apt, ///
+	panels(h) corr(psar1) force
+outreg2 using $tables/Table_A2, keep(hour_temp post finpost healthpost) label append ///
+	ctitle("ln(15 Minute kWh)") addtext(Household Fixed Effects,Yes,Cubic Time Trend, No, Week Fixed Effects, Yes, Day of Week Fixed Effect, Yes, Hour of Day Fixed Effects, Yes) 
+
+xtgls lnenergy hour_temp post finpost healthpost tt tt2 tt3 i.apt, ///
+	panels(h) corr(psar1) force
+outreg2 using $tables/Table_A2, keep(hour_temp post finpost healthpost) label append ///
+	ctitle("ln(15 Minute kWh)") addtext(Household Fixed Effects,Yes,Cubic Time Trend, Yes, Week Fixed Effects, No, Day of Week Fixed Effect, No, Hour of Day Fixed Effects, No) 
+
+xtgls lnenergy hour_temp post finpost healthpost pctmissing tt tt2 tt3 i.dayofweek i.hour i.apt, ///
+	panels(h) corr(psar1) force
+outreg2 using $tables/Table_A2, keep(hour_temp post finpost healthpost pctmissing) label append excel ///
+	ctitle("ln(15 Minute kWh)") addtext(Household Fixed Effects,Yes,Cubic Time Trend, Yes, Week Fixed Effects, No, Day of Week Fixed Effect, Yes, Hour of Day Fixed Effects, Yes) 

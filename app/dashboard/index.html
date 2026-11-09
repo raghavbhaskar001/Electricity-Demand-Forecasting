@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Midnight Grid · Electricity Demand Forecasting</title>
+  <meta name="description" content="Research dashboard: 1D CNN vs LSTM vs CNN–LSTM for 15-minute electricity demand forecasting (CEEW Mathura & Bareilly)." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="shell">
+
+  <!-- ============================================================ Sidebar -->
+  <aside class="sidebar glass" aria-label="Primary">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+      </div>
+      <div>
+        <div class="brand-title">Midnight Grid</div>
+        <div class="brand-sub">Demand forecasting study</div>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <button data-view="overview" class="active" title="Overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        <span>Overview</span>
+      </button>
+      <button data-view="forecast" title="Forecast Analysis">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 4-6 5 5"/><path d="M3 21h18"/></svg>
+        <span>Forecast Analysis</span>
+      </button>
+      <button data-view="simulator" title="Prediction Simulator">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/><circle cx="19" cy="5" r="2"/></svg>
+        <span>Prediction Simulator</span>
+      </button>
+      <button data-view="compare" title="Model Comparison">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 20V10"/><path d="M12 20V4"/><path d="M18 20v-7"/></svg>
+        <span>Model Comparison</span>
+      </button>
+      <button data-view="experiments" title="Experiments">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        <span>Experiments</span>
+      </button>
+      <button data-view="method" title="Methodology">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/></svg>
+        <span>Methodology</span>
+      </button>
+    </nav>
+
+    <div class="side-foot" id="side-foot"></div>
+  </aside>
+
+  <!-- ============================================================ Main -->
+  <main class="main" id="main">
+
+    <!-- ------------------------------------------------ Overview -->
+    <section class="view active" id="view-overview" aria-labelledby="h-overview">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Overview</div>
+          <h1 id="h-overview">1D CNN vs LSTM vs CNN–LSTM · 15-minute demand forecasting</h1>
+          <div class="page-desc">CEEW smart-meter data from Mathura and Bareilly, forecast one step (15 min) ahead from a 4-hour lookback, at aggregate-feeder and individual-household scale.</div>
+        </div>
+      </div>
+      <div class="grid g-kpi" id="kpis"></div>
+      <div class="grid g-2 mt" id="best-tiles"></div>
+      <div class="grid g-main mt">
+        <div class="glass panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">Persistence skill · all 36 experiments</div>
+              <div class="panel-sub">Skill = 1 − RMSE²model / RMSE²persistence. Green: beats naive persistence; red: worse.</div>
+            </div>
+          </div>
+          <div id="skill-map"></div>
+        </div>
+        <div class="glass panel">
+          <div class="panel-head"><div class="panel-title">Verified findings</div></div>
+          <div class="findings" id="findings"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------ Forecast -->
+    <section class="view" id="view-forecast" aria-labelledby="h-forecast">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Forecast Analysis</div>
+          <h1 id="h-forecast">Actual vs predicted demand on the locked test set</h1>
+          <div class="page-desc" id="fc-desc"></div>
+        </div>
+      </div>
+      <div class="glass controls" id="fc-controls"></div>
+      <div id="fc-body"></div>
+    </section>
+
+    <!-- ------------------------------------------------ Compare -->
+    <section class="view" id="view-compare" aria-labelledby="h-compare">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Model Comparison</div>
+          <h1 id="h-compare">Regression metrics against the persistence baseline</h1>
+          <div class="page-desc">All values are test-set metrics in physical units. Classification metrics are not applicable to this continuous regression task and are not shown.</div>
+        </div>
+      </div>
+      <div class="glass controls" id="cmp-controls"></div>
+      <div class="grid g-main">
+        <div class="glass panel">
+          <div class="panel-head">
+            <div><div class="panel-title" id="cmp-chart-title"></div><div class="panel-sub" id="cmp-chart-sub"></div></div>
+            <div class="legend" id="cmp-legend"></div>
+          </div>
+          <div class="chart" id="cmp-chart"></div>
+        </div>
+        <div class="glass panel">
+          <div class="panel-head"><div><div class="panel-title">Diebold–Mariano tests</div><div class="panel-sub" id="dm-sub"></div></div></div>
+          <div id="dm-body"></div>
+        </div>
+      </div>
+      <div class="glass panel mt">
+        <div class="panel-head"><div class="panel-title">Metric table</div><div class="panel-sub">Best value per column highlighted (models only).</div></div>
+        <div class="table-wrap"><table id="cmp-table"></table></div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------ Experiments -->
+    <section class="view" id="view-experiments" aria-labelledby="h-exp">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Experiment Explorer</div>
+          <h1 id="h-exp">All experiment records</h1>
+          <div class="page-desc">Every row is read from <span class="num">training_results.json</span>; status from the Phase 3.4 consolidated results. Click a column header to sort.</div>
+        </div>
+      </div>
+      <div class="glass controls" id="exp-controls"></div>
+      <div class="glass panel">
+        <div class="table-wrap" style="max-height: calc(100vh - 290px)"><table id="exp-table"></table></div>
+        <div class="table-foot"><span id="exp-count"></span><span>Errors in kW · WAPE in % · skill vs naive persistence</span></div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------ Simulator -->
+    <section class="view" id="view-simulator" aria-labelledby="h-sim">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Prediction Simulator</div>
+          <h1 id="h-sim">Interactive next-15-minute electricity demand forecaster</h1>
+          <div class="page-desc">Generate genuine <span class="num">t+1</span> (15 min) forecasts from 16 consecutive 15-minute intervals (4 hours) using verified PyTorch checkpoints and training-split scalers.</div>
+        </div>
+      </div>
+      <div class="glass controls sim-bar" id="sim-controls"></div>
+      <div id="sim-body"></div>
+      <div class="glass panel mt" id="sim-matrix-panel"></div>
+    </section>
+
+    <!-- ------------------------------------------------ Methodology -->
+    <section class="view" id="view-method" aria-labelledby="h-method">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Methodology</div>
+          <h1 id="h-method">How the results were produced</h1>
+          <div class="page-desc">Values below are read from the data bundle (source code and artifacts), not typed into the page.</div>
+        </div>
+      </div>
+      <div class="grid g-3 method" id="method-grid"></div>
+    </section>
+
+  </main>
+</div>
+
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+
+<script src="data.js"></script>
+<script src="simulator_bundle.js"></script>
+<script src="simulator.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,181 @@
+# ==============================================================================
+# EXPERIMENTAL CONFIGURATION SCHEMA
+# Project: Electricity Demand Forecasting Using Deep Learning:
+#          A Comparative Study of 1D CNN, LSTM and CNN–LSTM Models
+# ==============================================================================
+
+project:
+  name: "electricity-demand-forecasting-dl"
+  title: "Electricity Demand Forecasting Using Deep Learning: A Comparative Study of 1D CNN, LSTM and CNN–LSTM Models"
+  random_seed: 42
+  time_resolution: "15min"
+  primary_training_environment: "Google Colab (CUDA / GPU Acceleration)"
+  local_environment: "CPU / Data Pipeline & Verification"
+
+forecasting:
+  horizon_minutes: 15
+  horizon_steps: 1
+  lookback_steps: 16
+  lookback_hours: 4.0
+  lookback_scope_documentation: >
+    A sequence length of 16 steps represents exactly four hours of historical 15-minute observations
+    (16 x 15 min = 240 min). It captures immediate intra-day dynamic momentum, ramp rates, and thermal inertia,
+    but does not span full 24-hour diurnal (96 steps) or weekly (672 steps) cycles on its own. Macro-temporal
+    cycles are provided to the models via cyclical calendar encodings (hour_sin/cos, day_sin/cos).
+  interval_semantics: "Predict demand at t+1 (15 min ahead) given historical sequence [t-15, ..., t]"
+  target_unit: "kW" # All error metrics and predictions are computed in physical kW units
+
+target_cohorts:
+  aggregates:
+    - name: "Mathura Aggregate"
+      file: "data/processed/mathura_features.parquet"
+      target_col: "aggregate_demand_kw_primary"
+      feasibility: "primary_modelling"
+      total_contiguous_sequences: 9005
+      cohort_coverage_threshold: ">= 90% fixed cohort reporting"
+    - name: "Bareilly Aggregate"
+      file: "data/processed/bareilly_features.parquet"
+      target_col: "aggregate_demand_kw_primary"
+      feasibility: "primary_modelling"
+      total_contiguous_sequences: 8585
+      cohort_coverage_threshold: ">= 90% fixed cohort reporting"
+    - name: "Delhi Aggregate"
+      file: "data/processed/delhi_features.parquet"
+      target_col: "aggregate_demand_kw_primary"
+      feasibility: "exploratory_descriptive_only"
+      total_contiguous_sequences: 96
+      note: "Only 96 contiguous 16-step sequences available. Statistically underpowered for deep learning training. Evaluated for descriptive analysis only."
+  individual_meters:
+    - name: "Mathura Individual Meters"
+      file: "data/processed/mathura_individual_meters.parquet"
+      meter_count: 38
+      feasibility: "primary_modelling"
+      total_contiguous_sequences: 1536402
+      reconciled_census:
+        train_sequences: 1075464
+        purge_gap_1: 608
+        val_sequences: 230441
+        purge_gap_2: 608
+        test_sequences: 229281
+        sum: 1536402
+    - name: "Bareilly Individual Meters"
+      file: "data/processed/bareilly_individual_meters.parquet"
+      meter_count: 46
+      feasibility: "primary_modelling"
+      total_contiguous_sequences: 2668842
+      reconciled_census:
+        train_sequences: 1868167
+        purge_gap_1: 736
+        val_sequences: 400306
+        purge_gap_2: 736
+        test_sequences: 398897
+        sum: 2668842
+
+models:
+  architectures:
+    - name: "1D_CNN"
+      type: "cnn_1d"
+      description: "Multi-layer 1D Temporal Convolutional Network extracting local temporal patterns"
+      parameters_single_feature: 52225
+      parameters_ten_features: 53953
+    - name: "LSTM"
+      type: "lstm"
+      description: "2-layer LSTM Recurrent Neural Network modeling sequential autoregressive relationships"
+      parameters_single_feature: 52545
+      parameters_ten_features: 54849
+    - name: "CNN_LSTM"
+      type: "cnn_lstm"
+      description: "Hybrid 1D CNN + LSTM architecture combining local convolutional filtering with recurrent state"
+      parameters_single_feature: 69057
+      parameters_ten_features: 70785
+
+baselines:
+  - name: "Naive_Persistence"
+    formula: "y_hat_{t+1} = y_t"
+    description: "Carries forward the most recent 15-minute observed demand reading"
+  - name: "Seasonal_Previous_Day_Persistence"
+    formula: "y_hat_{t+1} = y_{t+1-96}"
+    description: "Same-time previous-day persistence (24-hour lag = 96 steps of 15 minutes)"
+
+experiments:
+  feature_sets:
+    - name: "consumption_only"
+      description: "Autoregressive historical electricity demand sequence only (1 feature)"
+      feature_cols:
+        - "demand_target"
+    - name: "consumption_weather_retro"
+      description: "Historical electricity demand coupled with contemporaneous retrospective ERA5-Land reanalysis (10 features)"
+      feature_cols:
+        - "demand_target"
+        - "retro_temperature_2m"
+        - "retro_relative_humidity_2m"
+        - "retro_dew_point_2m"
+        - "retro_surface_pressure"
+        - "retro_wind_speed_10m"
+        - "retro_direct_radiation"
+        - "retro_diffuse_radiation"
+        - "retro_cloud_cover"
+        - "retro_precipitation"
+    - name: "consumption_weather_operational"
+      description: "Historical electricity demand coupled with operational weather enforcing 5-day availability lag (10 features)"
+      feature_cols:
+        - "demand_target"
+        - "operational_temperature_2m"
+        - "operational_relative_humidity_2m"
+        - "operational_dew_point_2m"
+        - "operational_surface_pressure"
+        - "operational_wind_speed_10m"
+        - "operational_direct_radiation"
+        - "operational_diffuse_radiation"
+        - "operational_cloud_cover"
+        - "operational_precipitation"
+
+split_strategy:
+  type: "chronological" # Strict forward temporal sequence; random shuffling is prohibited
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  boundary_purge_gap: 16 # L=16 steps discarded across split boundaries to prevent overlapping sequence windows
+
+training:
+  batch_size_aggregate: 64
+  batch_size_individual: 512
+  epochs_aggregate: 40
+  epochs_individual: 15
+  learning_rate: 0.001
+  loss_function: "HuberLoss (delta=1.0)"
+  optimizer: "AdamW (weight_decay=1e-4)"
+  gradient_clip_max_norm: 1.0
+  lr_scheduler: "ReduceLROnPlateau (mode='min', factor=0.5, patience=4, min_lr=1e-6)"
+  early_stopping_patience_aggregate: 8
+  early_stopping_patience_individual: 6
+  scaling: "StandardScaler fit strictly on training set only (global on aggregate series; per-meter on individual household panels)"
+
+evaluation:
+  target_unit: "kW"
+  metrics:
+    - name: "RMSE"
+      description: "Root Mean Squared Error in physical kW"
+    - name: "MAE"
+      description: "Mean Absolute Error in physical kW"
+    - name: "WAPE"
+      description: "Weighted Absolute Percentage Error in % (handles zero-load intervals without asymptotic blowup)"
+    - name: "MAPE"
+      description: "Mean Absolute Percentage Error in % (excluding observations < 0.01 kW to avoid near-zero inflation)"
+      exclusion_threshold_kw: 0.01
+    - name: "R2"
+      description: "Coefficient of determination evaluating proportion of variance explained relative to sample mean"
+    - name: "nRMSE"
+      description: "Normalized RMSE expressed as percentage of empirical mean demand"
+    - name: "Persistence_Skill_Score"
+      description: "Forecast skill score evaluated strictly relative to Naive Persistence (1 - RMSE_model^2 / RMSE_persistence^2)"
+    - name: "Peak_MAE"
+      description: "Mean Absolute Error on the top 5% highest demand intervals (peak grid stress conditions)"
+
+paths:
+  raw_data_dir: "data/raw"
+  interim_data_dir: "data/interim"
+  processed_data_dir: "data/processed"
+  checkpoints_dir: "artifacts/checkpoints"
+  metrics_dir: "artifacts/metrics"
+  logs_dir: "logs"

@@ -1,0 +1,86 @@
+
+
+use $data/Table_A1_Final.dta, replace
+
+gen dummy=.		// WILL BE USED IN TESTING SUBSAMPLE
+gen alwaysoften=.	// WILL BE USED TO SUBSET PEOPLE WHO TAKE ACTION ALWAYS OR OFTEN
+
+foreach i of varlist unplug_appliances buy_energy_efficient turnoff_ac switchoff_lights change_appliance_setting{
+
+local label : variable label `i'
+
+// HOW OFTEN THEY TAKE ACTION
+quietly replace dummy=(`i'=="Always")
+quietly ttest dummy, by(subsample)
+local meanalwayssub=round(`r(mu_2)',.0001)*100
+local meanalwayselse=round(`r(mu_1)',.0001)*100
+local palways=round(`r(p)',.001)
+
+quietly replace dummy=(`i'=="Often")
+quietly ttest dummy, by(subsample)
+local meanoftensub=round(`r(mu_2)',.0001)*100
+local meanoftenelse=round(`r(mu_1)',.0001)*100
+local poften=round(`r(p)',.001)
+
+
+// MOTIVATIONS
+// MOTIVATION 7 IS MONEY, MOTIVATION 8 IS HABIT, MOTIVATION 10 IS HEALTH
+
+
+quietly replace alwaysoften=(`i'=="Always" | `i'=="Often")
+
+quietly replace dummy=(regexm(mot_`i',"7"))
+quietly replace dummy=. if alwaysoften==0
+quietly ttest dummy, by(subsample)
+
+local mean7sub=round(`r(mu_2)',.0001)*100
+local mean7else=round(`r(mu_1)',.0001)*100
+local p7=round(`r(p)',.001)
+
+quietly replace dummy=(regexm(mot_`i',"8"))
+quietly replace dummy=. if alwaysoften==0
+quietly ttest dummy, by(subsample)
+
+local mean8sub=round(`r(mu_2)',.0001)*100
+local mean8else=round(`r(mu_1)',.0001)*100
+local p8=round(`r(p)',.001)
+
+quietly replace dummy=(regexm(mot_`i',"10"))
+quietly replace dummy=. if alwaysoften==0
+quietly ttest dummy, by(subsample)
+
+local mean10sub=round(`r(mu_2)',.0001)*100
+local mean10else=round(`r(mu_1)',.0001)*100
+local p10=round(`r(p)',.001)
+
+display "`label'&`meanalwayssub'&`meanalwayselse'&`meanoftensub'&`meanoftenelse'&`mean7sub'&`mean7else'&`mean8sub'&`mean8else'&`mean10sub'&`mean10else'"
+display "&(`palways')&&(`poften')&&(`p7')&&(`p8')&&(`p10')" 
+
+}
+//
+
+//HEADER FOR TABLE A1
+
+display "&Periodicity of Behavior&&&&Motivation for Behavior&&&" _newline ///
+"Conservation&% Always&&% Often&&%Money&&% Habit&&% Health" _newline ///
+"&Sub Sample&Else&Sub Sample&Else&Sub Sample&Else&Sub Sample&Else&Sub Sample&Else"
+
+
+/*
+// THIS DO FILE WILL PRODUCE THIS OUTPUT 
+COPY AND PASTE THIS INTO WORD, HIGHLIGHT, AND CONVERT TEXT TO TABLE USING THE & AS THE DELIMITER
+
+&Periodicity of Behavior&&&&Motivation for Behavior&&&
+Conservation&% Always&&% Often&&%Money&&% Habit&&% Health
+&Sub Sample&Else&Sub Sample&Else&Sub Sample&Else&Sub Sample&Else&Sub Sample&Else
+Unplug Appliances&77.39&58.74&19.13&25.53&71.17&70.30&26.13&29.7&.45&.6
+&(0)&&(.035)&&(.792)&&(.278)&&(.789)
+Buy Energy Efficient Appliances&62.61&50.25&20&28.81&60.53&61.73&12.11&10.34&0&1.03
+&(0)&&(.005)&&(.75)&&(.462)&&(.159)
+Turn Off AC&72.61&58.68&18.7&20.44&67.14&65.74&20.95&23.05&0&.08
+&(0)&&(.538)&&(.691)&&(.502)&&(.683)
+Turn Off Lights&52.61&41.57&21.3&24.09&60.59&60.25&21.76&23.56&1.18&2.59
+&(.002)&&(.354)&&(.933)&&(.607)&&(.265)
+Change Appliance Settings&43.91&33.21&18.7&20.13&39.58&38.56&18.06&18.63&9.72&11.79
+&(.001)&&(.612)&&(.816)&&(.869)&&(.472)
+

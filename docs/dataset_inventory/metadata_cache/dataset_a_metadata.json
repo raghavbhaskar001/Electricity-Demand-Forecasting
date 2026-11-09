@@ -1,0 +1,1786 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 3055588,
+    "identifier": "DVN/7MEXN4",
+    "persistentUrl": "https://doi.org/10.7910/DVN/7MEXN4",
+    "protocol": "doi",
+    "authority": "10.7910",
+    "separator": "/",
+    "publisher": "Harvard Dataverse",
+    "publicationDate": "2017-10-03",
+    "image_url": "https://dataverse.harvard.edu/api/datasets/3055588/logo",
+    "storageIdentifier": "file",
+    "effectiveDatasetFileCountLimit": 1000,
+    "datasetFileUploadsAvailable": 954,
+    "datasetType": "dataset",
+    "locks": [],
+    "latestVersion": {
+      "id": 129046,
+      "datasetId": 3055588,
+      "datasetPersistentId": "doi:10.7910/DVN/7MEXN4",
+      "datasetType": "dataset",
+      "storageIdentifier": "file",
+      "versionNumber": 1,
+      "internalVersionNumber": 35,
+      "versionMinorNumber": 0,
+      "versionState": "RELEASED",
+      "latestVersionPublishingState": "RELEASED",
+      "deaccessionLink": "",
+      "distributionDate": "2017-10-03",
+      "productionDate": "2014",
+      "UNF": "UNF:6:OxIdk6LTdtNK4aAziBQ3pg==",
+      "lastUpdateTime": "2017-10-03T23:13:10Z",
+      "releaseTime": "2017-10-03T23:13:10Z",
+      "createTime": "2017-10-03T20:41:39Z",
+      "publicationDate": "2017-10-03",
+      "citationDate": "2017-10-03",
+      "effectiveDatasetFileCountLimit": 1000,
+      "datasetFileUploadsAvailable": 954,
+      "license": {
+        "name": "CC0 1.0",
+        "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+        "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+        "rightsIdentifier": "CC0-1.0",
+        "rightsIdentifierScheme": "SPDX",
+        "schemeUri": "https://spdx.org/licenses/",
+        "languageCode": "en"
+      },
+      "fileAccessRequest": false,
+      "metadataBlocks": {
+        "citation": {
+          "displayName": "Citation Metadata",
+          "name": "citation",
+          "fields": [
+            {
+              "typeName": "title",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Replication Data for Chen, V.L., Delmas, M.A., Locke S., Singh, A. 2017. Information Strategies for Energy Conservation: A Field Experiment in India. Energy Economics."
+            },
+            {
+              "typeName": "author",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "authorName": {
+                    "typeName": "authorName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "DELMAS, MAGALI A"
+                  },
+                  "authorAffiliation": {
+                    "typeName": "authorAffiliation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "University of California-Los Angeles"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "datasetContact",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "datasetContactName": {
+                    "typeName": "datasetContactName",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "DELMAS, MAGALI A"
+                  },
+                  "datasetContactAffiliation": {
+                    "typeName": "datasetContactAffiliation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "University of California-Los Angeles"
+                  },
+                  "datasetContactEmail": {
+                    "typeName": "datasetContactEmail",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "delmas@ucla.edu"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "dsDescription",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "dsDescriptionValue": {
+                    "typeName": "dsDescriptionValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "The data presented in this article are related to the research article entitled: \u201cInformation Strategies for Energy Conservation: A Field Experiment in India\u201d (Victor L. Chen, Magali A. Delmas, Stephen L. Locke, Amarjeet Singh, 2017).The availability of high-resolution electricity data offers benefits to both utilities and consumers to understand the dynamics of energy consumption for example, between billing periods or times of peak demand. However, few public datasets with high-temporal resolution have been available to researchers on electricity use, especially at the appliance-level. In this article, we describe data collected in a residential field experiment for 19 apartments at an Indian faculty housing complex during the period from August 1, 2013 to May 12, 2014. The dataset includes detailed information about electricity consumption. It also includes information on apartment characteristics and hourly weather variation to enable further studies of energy performance. These data can be used by researchers as training datasets to evaluate electricity usage consumption. "
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "subject",
+              "multiple": true,
+              "typeClass": "controlledVocabulary",
+              "value": [
+                "Business and Management",
+                "Computer and Information Science",
+                "Earth and Environmental Sciences",
+                "Engineering",
+                "Social Sciences"
+              ]
+            },
+            {
+              "typeName": "keyword",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Energy Conservation"
+                  },
+                  "keywordVocabulary": {
+                    "typeName": "keywordVocabulary",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Energy Conservation"
+                  }
+                },
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Information Strategies"
+                  },
+                  "keywordVocabulary": {
+                    "typeName": "keywordVocabulary",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Information Strategies"
+                  }
+                },
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Energy Feedback"
+                  },
+                  "keywordVocabulary": {
+                    "typeName": "keywordVocabulary",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Energy Feedback"
+                  }
+                },
+                {
+                  "keywordValue": {
+                    "typeName": "keywordValue",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Field Experiment"
+                  },
+                  "keywordVocabulary": {
+                    "typeName": "keywordVocabulary",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Field Experiment"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "publication",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "publicationCitation": {
+                    "typeName": "publicationCitation",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Chen, V.L., Delmas, M.A., Locke S. & Singh, A. 2017. Information Strategies for Energy Conservation: A Field Experiment in India. Energy Economics. "
+                  },
+                  "publicationIDType": {
+                    "typeName": "publicationIDType",
+                    "multiple": false,
+                    "typeClass": "controlledVocabulary",
+                    "value": "doi"
+                  },
+                  "publicationIDNumber": {
+                    "typeName": "publicationIDNumber",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "https://doi.org/10.1016/j.eneco.2017.09.004"
+                  },
+                  "publicationURL": {
+                    "typeName": "publicationURL",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "http://www.sciencedirect.com/science/article/pii/S0140988317303079"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "language",
+              "multiple": true,
+              "typeClass": "controlledVocabulary",
+              "value": [
+                "English"
+              ]
+            },
+            {
+              "typeName": "productionDate",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "2014"
+            },
+            {
+              "typeName": "productionPlace",
+              "multiple": true,
+              "typeClass": "primitive",
+              "value": [
+                "New Delhi, India"
+              ]
+            },
+            {
+              "typeName": "contributor",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "contributorType": {
+                    "typeName": "contributorType",
+                    "multiple": false,
+                    "typeClass": "controlledVocabulary",
+                    "value": "Researcher"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "distributionDate",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "2017-10-03"
+            },
+            {
+              "typeName": "depositor",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "DELMAS, MAGALI"
+            },
+            {
+              "typeName": "dateOfDeposit",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "2017-10-03"
+            },
+            {
+              "typeName": "timePeriodCovered",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "timePeriodCoveredStart": {
+                    "typeName": "timePeriodCoveredStart",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "2013-08"
+                  },
+                  "timePeriodCoveredEnd": {
+                    "typeName": "timePeriodCoveredEnd",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "2014-02"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "dateOfCollection",
+              "multiple": true,
+              "typeClass": "compound",
+              "value": [
+                {
+                  "dateOfCollectionStart": {
+                    "typeName": "dateOfCollectionStart",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "2013-08"
+                  },
+                  "dateOfCollectionEnd": {
+                    "typeName": "dateOfCollectionEnd",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "2014-02"
+                  }
+                }
+              ]
+            },
+            {
+              "typeName": "kindOfData",
+              "multiple": true,
+              "typeClass": "primitive",
+              "value": [
+                "Electricity Consumption"
+              ]
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "label": "Data Description for Dataset on Information Strategies for Energy Conservation.pdf",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055649,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/6FWBNN",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/6FWBNN",
+            "filename": "Data Description for Dataset on Information Strategies for Energy Conservation.pdf",
+            "contentType": "application/pdf",
+            "friendlyType": "Adobe PDF",
+            "filesize": 189916,
+            "storageIdentifier": "s3://dvn-cloud:15ee4824b67-e57d15ad8fd9",
+            "rootDataFileId": -1,
+            "md5": "df1b75111dccf254d5830d29cff20276",
+            "checksum": {
+              "type": "MD5",
+              "value": "df1b75111dccf254d5830d29cff20276"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Figures_3_A1.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055627,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/VB0SVT",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/VB0SVT",
+            "filename": "Figures_3_A1.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1087,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b8c3-4db6ada54305",
+            "rootDataFileId": -1,
+            "md5": "639213ea0c0d2fd587090a2a5c2b59eb",
+            "checksum": {
+              "type": "MD5",
+              "value": "639213ea0c0d2fd587090a2a5c2b59eb"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Figures_Use_Final.dta",
+          "restricted": false,
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055598,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/D5ZKY5",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/D5ZKY5",
+            "filename": "Figures_Use_Final.dta",
+            "contentType": "application/x-stata",
+            "friendlyType": "Stata Binary",
+            "filesize": 37220611,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fc936f-326bcb3376f0",
+            "rootDataFileId": -1,
+            "md5": "dd5ff2e047aa30a08e46f3f054e6f4ce",
+            "checksum": {
+              "type": "MD5",
+              "value": "dd5ff2e047aa30a08e46f3f054e6f4ce"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Master_Do_File.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055628,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/NZ63LC",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/NZ63LC",
+            "filename": "Master_Do_File.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 884,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b8e3-0745ad367101",
+            "rootDataFileId": -1,
+            "md5": "f700247085aa08fd47dd7955a2034304",
+            "checksum": {
+              "type": "MD5",
+              "value": "f700247085aa08fd47dd7955a2034304"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Prepare_Figure_Data.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055629,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/HZZUKU",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/HZZUKU",
+            "filename": "Prepare_Figure_Data.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1258,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b923-c6697e0d1814",
+            "rootDataFileId": -1,
+            "md5": "88739cb09161420b98abbc43a0385f39",
+            "checksum": {
+              "type": "MD5",
+              "value": "88739cb09161420b98abbc43a0385f39"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_1.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055630,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/OOVHKI",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/OOVHKI",
+            "filename": "Table_1.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1938,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b941-42f3c6edc1e1",
+            "rootDataFileId": -1,
+            "md5": "0102cffc5599d84cc24f3f5e6fc2733e",
+            "checksum": {
+              "type": "MD5",
+              "value": "0102cffc5599d84cc24f3f5e6fc2733e"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_1_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055599,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/W7LSXM",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/W7LSXM",
+            "filename": "Table_1_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 162334,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fc9b04-e38ffbc722d0",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 293704,
+            "originalFileName": "Table_1_Final.dta",
+            "UNF": "UNF:6:JoqWPnQ62f9QmAfyzRFO4g==",
+            "rootDataFileId": -1,
+            "md5": "d4243b5bb97929072bfd1063514d2ca2",
+            "checksum": {
+              "type": "MD5",
+              "value": "d4243b5bb97929072bfd1063514d2ca2"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_2.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055631,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/OLWRO5",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/OLWRO5",
+            "filename": "Table_2.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 998,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b95d-62408c433a2a",
+            "rootDataFileId": -1,
+            "md5": "3c431ad1a2a5803d44c17411d54d3268",
+            "checksum": {
+              "type": "MD5",
+              "value": "3c431ad1a2a5803d44c17411d54d3268"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_2_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055600,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/VVNKJW",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/VVNKJW",
+            "filename": "Table_2_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 309005,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fc9f89-f35aeabe67d4",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 137577,
+            "originalFileName": "Table_2_Final.dta",
+            "UNF": "UNF:6:f8pkX8xhU2ARM37k76bmsw==",
+            "rootDataFileId": -1,
+            "md5": "543ce090cdca458c156f35caa09b8372",
+            "checksum": {
+              "type": "MD5",
+              "value": "543ce090cdca458c156f35caa09b8372"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_4.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055632,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/XYUICQ",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/XYUICQ",
+            "filename": "Table_4.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1847,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b97b-ca27c4f93192",
+            "rootDataFileId": -1,
+            "md5": "7a3c338075af9a22cdf342faa47dcf11",
+            "checksum": {
+              "type": "MD5",
+              "value": "7a3c338075af9a22cdf342faa47dcf11"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_4_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055601,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/GC6OQ5",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/GC6OQ5",
+            "filename": "Table_4_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 341516,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fca4df-93888c1c0b37",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 192324,
+            "originalFileName": "Table_4_Final.dta",
+            "UNF": "UNF:6:sqROM6GPEpyiZL/49f+TOQ==",
+            "rootDataFileId": -1,
+            "md5": "86d89c23370ca1114dc7ae9090ea90c2",
+            "checksum": {
+              "type": "MD5",
+              "value": "86d89c23370ca1114dc7ae9090ea90c2"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_5.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055633,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/CMYBU6",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/CMYBU6",
+            "filename": "Table_5.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 848,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b998-93d8ab8ff2b8",
+            "rootDataFileId": -1,
+            "md5": "a87722644a4802b6943502bb459c3dba",
+            "checksum": {
+              "type": "MD5",
+              "value": "a87722644a4802b6943502bb459c3dba"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_5_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055602,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/CPZ1ZL",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/CPZ1ZL",
+            "filename": "Table_5_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 276209,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fca902-070936ca85f4",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 120735,
+            "originalFileName": "Table_5_Final.dta",
+            "UNF": "UNF:6:ig0z1LeM9sR2blqFHN8cMw==",
+            "rootDataFileId": -1,
+            "md5": "1400d3aeaca0c001ad5d33b15ede6142",
+            "checksum": {
+              "type": "MD5",
+              "value": "1400d3aeaca0c001ad5d33b15ede6142"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_6_1_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055603,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/OS15CJ",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/OS15CJ",
+            "filename": "Table_6_1_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 28690043,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fd7b87-0e1d72133dd4",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13156440,
+            "originalFileName": "Table_6_1_Final.dta",
+            "UNF": "UNF:6:JmoOxPiyNS9kI/pooBQpNA==",
+            "rootDataFileId": -1,
+            "md5": "ee5b2144f65315d347298ebc7d12efed",
+            "checksum": {
+              "type": "MD5",
+              "value": "ee5b2144f65315d347298ebc7d12efed"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_6_2_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055604,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/RXCLJE",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/RXCLJE",
+            "filename": "Table_6_2_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 15253367,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fdee72-51964a4f7e66",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 6981530,
+            "originalFileName": "Table_6_2_Final.dta",
+            "UNF": "UNF:6:06tzM579cd4eNB4eIc6JFw==",
+            "rootDataFileId": -1,
+            "md5": "77c1186c7d83a41632e4c84d25fa6e76",
+            "checksum": {
+              "type": "MD5",
+              "value": "77c1186c7d83a41632e4c84d25fa6e76"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_6_3_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055605,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/3C2CYZ",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/3C2CYZ",
+            "filename": "Table_6_3_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 7943653,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fe2ace-d605d9ee4998",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 3632718,
+            "originalFileName": "Table_6_3_Final.dta",
+            "UNF": "UNF:6:ndpbrR1tk8rY1sK2L9ZZpg==",
+            "rootDataFileId": -1,
+            "md5": "6deb3eaa8b58ff940b67434566598351",
+            "checksum": {
+              "type": "MD5",
+              "value": "6deb3eaa8b58ff940b67434566598351"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_6_4_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055606,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/CO8RTG",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/CO8RTG",
+            "filename": "Table_6_4_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 404646,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fe302e-e4fc2745f847",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 194947,
+            "originalFileName": "Table_6_4_Final.dta",
+            "UNF": "UNF:6:6qo0AQhDFdebFfpGXU6LCQ==",
+            "rootDataFileId": -1,
+            "md5": "aaa9d664062aec63a4cab73a564627fc",
+            "checksum": {
+              "type": "MD5",
+              "value": "aaa9d664062aec63a4cab73a564627fc"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_6.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055634,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/DYJVT6",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/DYJVT6",
+            "filename": "Table_6.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1825,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b9b4-3580ef8a9bf1",
+            "rootDataFileId": -1,
+            "md5": "08424e200b3f837f13630d2b665a36c9",
+            "checksum": {
+              "type": "MD5",
+              "value": "08424e200b3f837f13630d2b665a36c9"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_7.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055635,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/A11VD6",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/A11VD6",
+            "filename": "Table_7.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1082,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b9d1-f694dbc4ce14",
+            "rootDataFileId": -1,
+            "md5": "97021724ff231d41a74b88598fea55a8",
+            "checksum": {
+              "type": "MD5",
+              "value": "97021724ff231d41a74b88598fea55a8"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_7_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055607,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/8G6UXP",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/8G6UXP",
+            "filename": "Table_7_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 375,
+            "storageIdentifier": "s3://dvn-cloud:15ee3fe322c-8d79fa7ffe54",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 1255,
+            "originalFileName": "Table_7_Final.dta",
+            "UNF": "UNF:6:PgM2nQ+FunHcmgOSSFeD+g==",
+            "rootDataFileId": -1,
+            "md5": "0cb2dc7d5a89fdcc75792a24628e2819",
+            "checksum": {
+              "type": "MD5",
+              "value": "0cb2dc7d5a89fdcc75792a24628e2819"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_8_1_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055608,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/PYGPDX",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/PYGPDX",
+            "filename": "Table_8_1_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 30240495,
+            "storageIdentifier": "s3://dvn-cloud:15ee3ff0b30-7fb73cda5c33",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13908448,
+            "originalFileName": "Table_8_1_Final.dta",
+            "UNF": "UNF:6:Qxvw0f+Vd9wA4yjYu9jK+A==",
+            "rootDataFileId": -1,
+            "md5": "48d101f08c0e0fce3a951e820fc1e29a",
+            "checksum": {
+              "type": "MD5",
+              "value": "48d101f08c0e0fce3a951e820fc1e29a"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_8_2_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055609,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/OQ9LMJ",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/OQ9LMJ",
+            "filename": "Table_8_2_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 16076290,
+            "storageIdentifier": "s3://dvn-cloud:15ee3ff7f4b-242bd98400d4",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 7380686,
+            "originalFileName": "Table_8_2_Final.dta",
+            "UNF": "UNF:6:L47AvCkZ8YDBPjRUFudKTQ==",
+            "rootDataFileId": -1,
+            "md5": "b32b226a543d9c9a7e45ecb3cb945fe5",
+            "checksum": {
+              "type": "MD5",
+              "value": "b32b226a543d9c9a7e45ecb3cb945fe5"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_8_3_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055610,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/F15DAP",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/F15DAP",
+            "filename": "Table_8_3_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 8371746,
+            "storageIdentifier": "s3://dvn-cloud:15ee3ffc110-666009688dee",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 3840524,
+            "originalFileName": "Table_8_3_Final.dta",
+            "UNF": "UNF:6:Zel9Lr2ljkV3SpUxVLBE0w==",
+            "rootDataFileId": -1,
+            "md5": "aef9cbdce89aff9cc4805b2ea9a48f4f",
+            "checksum": {
+              "type": "MD5",
+              "value": "aef9cbdce89aff9cc4805b2ea9a48f4f"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_8_4_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055611,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/0KKXCZ",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/0KKXCZ",
+            "filename": "Table_8_4_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 434050,
+            "storageIdentifier": "s3://dvn-cloud:15ee3ffc6bb-dc1336fdc29d",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 209950,
+            "originalFileName": "Table_8_4_Final.dta",
+            "UNF": "UNF:6:2ZIdvK3RdIIVO+IrNSJO/w==",
+            "rootDataFileId": -1,
+            "md5": "20425cff75a77401773387bc6805f46f",
+            "checksum": {
+              "type": "MD5",
+              "value": "20425cff75a77401773387bc6805f46f"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_8.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055636,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/U2OCXG",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/U2OCXG",
+            "filename": "Table_8.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 2656,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b9ef-992530de4cb2",
+            "rootDataFileId": -1,
+            "md5": "5c403f7f474109940db992e013cd89f0",
+            "checksum": {
+              "type": "MD5",
+              "value": "5c403f7f474109940db992e013cd89f0"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_9_1_Final.tab",
+          "restricted": false,
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055612,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/STZQMU",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/STZQMU",
+            "filename": "Table_9_1_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 30204674,
+            "storageIdentifier": "s3://dvn-cloud:15ee400a69e-c7f742310029",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13908448,
+            "originalFileName": "Table_9_1_Final.dta",
+            "UNF": "UNF:6:M1FZiRu+EkhyWuw3L5vDXQ==",
+            "rootDataFileId": -1,
+            "md5": "e1a3035da384d1d1eff59493dedd1a22",
+            "checksum": {
+              "type": "MD5",
+              "value": "e1a3035da384d1d1eff59493dedd1a22"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_9_2_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055613,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/94JHF4",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/94JHF4",
+            "filename": "Table_9_2_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 16056944,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ac75-4aec1f665bd3",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 7380686,
+            "originalFileName": "Table_9_2_Final.dta",
+            "UNF": "UNF:6:A6GDUx4JJzx7kw65bkXsGg==",
+            "rootDataFileId": -1,
+            "md5": "44d482cf47140953d6c1941c2e910a52",
+            "checksum": {
+              "type": "MD5",
+              "value": "44d482cf47140953d6c1941c2e910a52"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_9_3_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055614,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/4P2MXH",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/4P2MXH",
+            "filename": "Table_9_3_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 8361572,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ad04-7124b9934fdc",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 3840524,
+            "originalFileName": "Table_9_3_Final.dta",
+            "UNF": "UNF:6:vY6q/l8rvmOIa3gCmG6I2w==",
+            "rootDataFileId": -1,
+            "md5": "745aa39b4f999ad76d0c458e6f0835f2",
+            "checksum": {
+              "type": "MD5",
+              "value": "745aa39b4f999ad76d0c458e6f0835f2"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_9_4_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055615,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/9U6RVL",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/9U6RVL",
+            "filename": "Table_9_4_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 424004,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ad35-399cf930e352",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 204949,
+            "originalFileName": "Table_9_4_Final.dta",
+            "UNF": "UNF:6:swMyH5s8w+GAZ9q60CHUuQ==",
+            "rootDataFileId": -1,
+            "md5": "dd7919d8caff076f57f7ca73f0635b8b",
+            "checksum": {
+              "type": "MD5",
+              "value": "dd7919d8caff076f57f7ca73f0635b8b"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_9.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055637,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/R4MIMV",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/R4MIMV",
+            "filename": "Table_9.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 2362,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ba0a-3c89e2c9d2b0",
+            "rootDataFileId": -1,
+            "md5": "a324c8b8afc117720ef767f10ed833ab",
+            "checksum": {
+              "type": "MD5",
+              "value": "a324c8b8afc117720ef767f10ed833ab"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A1.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055638,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/DDWQ2Y",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/DDWQ2Y",
+            "filename": "Table_A1.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 3089,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ba27-291644bd5429",
+            "rootDataFileId": -1,
+            "md5": "8cb16be0a86838eff646bd341e6a46ea",
+            "checksum": {
+              "type": "MD5",
+              "value": "8cb16be0a86838eff646bd341e6a46ea"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A1_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055616,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/TUWRZX",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/TUWRZX",
+            "filename": "Table_A1_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 162334,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ad4a-9e7e2931adf1",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 293704,
+            "originalFileName": "Table_A1_Final.dta",
+            "UNF": "UNF:6:JoqWPnQ62f9QmAfyzRFO4g==",
+            "rootDataFileId": -1,
+            "md5": "fbace49a4ec576d600520dd132ad1a10",
+            "checksum": {
+              "type": "MD5",
+              "value": "fbace49a4ec576d600520dd132ad1a10"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A2.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055639,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/JYRZ1J",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/JYRZ1J",
+            "filename": "Table_A2.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1625,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ba42-5a689a849c8a",
+            "rootDataFileId": -1,
+            "md5": "497ba2fb9070887d8a445c0480473193",
+            "checksum": {
+              "type": "MD5",
+              "value": "497ba2fb9070887d8a445c0480473193"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A2_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055617,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/XGVFZJ",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/XGVFZJ",
+            "filename": "Table_A2_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 30494398,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ae2b-9ab49537f5ff",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 16539083,
+            "originalFileName": "Table_A2_Final.dta",
+            "UNF": "UNF:6:hiTDOb22PdGX5QFNGm5lFg==",
+            "rootDataFileId": -1,
+            "md5": "569209850cf4c8bb442c0e9be3d23d5a",
+            "checksum": {
+              "type": "MD5",
+              "value": "569209850cf4c8bb442c0e9be3d23d5a"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A3_1_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055618,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/H36KSY",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/H36KSY",
+            "filename": "Table_A3_1_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 28690043,
+            "storageIdentifier": "s3://dvn-cloud:15ee400af52-470c6ac2ba07",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13156440,
+            "originalFileName": "Table_A3_1_Final.dta",
+            "UNF": "UNF:6:JmoOxPiyNS9kI/pooBQpNA==",
+            "rootDataFileId": -1,
+            "md5": "c734a9a7b62b29d2776046442dc3372c",
+            "checksum": {
+              "type": "MD5",
+              "value": "c734a9a7b62b29d2776046442dc3372c"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A3_2_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055619,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/5PCVWZ",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/5PCVWZ",
+            "filename": "Table_A3_2_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 27339055,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b058-8f85a1bd4ac0",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 12529520,
+            "originalFileName": "Table_A3_2_Final.dta",
+            "UNF": "UNF:6:n849gjzAUSUs9cuve7d8IA==",
+            "rootDataFileId": -1,
+            "md5": "85111a344bd701d56b674dc30ccf5699",
+            "checksum": {
+              "type": "MD5",
+              "value": "85111a344bd701d56b674dc30ccf5699"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A3_3_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055620,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/HNUZAB",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/HNUZAB",
+            "filename": "Table_A3_3_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 27741447,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b146-98435187b1b3",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 12726815,
+            "originalFileName": "Table_A3_3_Final.dta",
+            "UNF": "UNF:6:zZKq/h55BLVrtnnpUVkXoQ==",
+            "rootDataFileId": -1,
+            "md5": "d9b49d4104884e2a1aaf17f8a5f8fe02",
+            "checksum": {
+              "type": "MD5",
+              "value": "d9b49d4104884e2a1aaf17f8a5f8fe02"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A3.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055640,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/VOB6MK",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/VOB6MK",
+            "filename": "Table_A3.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1448,
+            "storageIdentifier": "s3://dvn-cloud:15ee400ba93-eff3a364a237",
+            "rootDataFileId": -1,
+            "md5": "b3730bbeada9491b5bf97a63ea8b191b",
+            "checksum": {
+              "type": "MD5",
+              "value": "b3730bbeada9491b5bf97a63ea8b191b"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A4_1_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055621,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/UOGJFY",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/UOGJFY",
+            "filename": "Table_A4_1_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 30240495,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b243-cd14c3484b0f",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13908448,
+            "originalFileName": "Table_A4_1_Final.dta",
+            "UNF": "UNF:6:Qxvw0f+Vd9wA4yjYu9jK+A==",
+            "rootDataFileId": -1,
+            "md5": "fc33743ac7e9f1c9797a9e2b90049eb2",
+            "checksum": {
+              "type": "MD5",
+              "value": "fc33743ac7e9f1c9797a9e2b90049eb2"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A4_2_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055622,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/2NDJ7L",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/2NDJ7L",
+            "filename": "Table_A4_2_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 28817859,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b399-9b1b3e099038",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13245704,
+            "originalFileName": "Table_A4_2_Final.dta",
+            "UNF": "UNF:6:lllnrFXm1SNAxHjaru3VhQ==",
+            "rootDataFileId": -1,
+            "md5": "e1a794183ffe8bccc77859c0d0721665",
+            "checksum": {
+              "type": "MD5",
+              "value": "e1a794183ffe8bccc77859c0d0721665"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A4_3_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055623,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/X3VGN9",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/X3VGN9",
+            "filename": "Table_A4_3_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 29242799,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b515-cc0c1fb0c870",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13454273,
+            "originalFileName": "Table_A4_3_Final.dta",
+            "UNF": "UNF:6:rnI9tH6+xTHUZ3BvDGY9Uw==",
+            "rootDataFileId": -1,
+            "md5": "3729865382ca4eec5d5e13100a82470e",
+            "checksum": {
+              "type": "MD5",
+              "value": "3729865382ca4eec5d5e13100a82470e"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A4.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055641,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/FKGJBY",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/FKGJBY",
+            "filename": "Table_A4.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1350,
+            "storageIdentifier": "s3://dvn-cloud:15ee400babd-58c02821817b",
+            "rootDataFileId": -1,
+            "md5": "a9d1de3b2a12762473e791707de6a160",
+            "checksum": {
+              "type": "MD5",
+              "value": "a9d1de3b2a12762473e791707de6a160"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A5_1_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055624,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/KEJUXN",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/KEJUXN",
+            "filename": "Table_A5_1_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 30204674,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b661-8f64a53ad910",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13908448,
+            "originalFileName": "Table_A5_1_Final.dta",
+            "UNF": "UNF:6:M1FZiRu+EkhyWuw3L5vDXQ==",
+            "rootDataFileId": -1,
+            "md5": "36d305e8a429abcd7413a5f38e021d0d",
+            "checksum": {
+              "type": "MD5",
+              "value": "36d305e8a429abcd7413a5f38e021d0d"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A5_2_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055625,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/62JKB2",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/62JKB2",
+            "filename": "Table_A5_2_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 28782038,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b75c-4a716ca2a734",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13245704,
+            "originalFileName": "Table_A5_2_Final.dta",
+            "UNF": "UNF:6:Rq+w6InGatdGrFffoXSaww==",
+            "rootDataFileId": -1,
+            "md5": "4bc2b5b4da42d7da7d530adfa5d3d5c4",
+            "checksum": {
+              "type": "MD5",
+              "value": "4bc2b5b4da42d7da7d530adfa5d3d5c4"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A5_3_Final.tab",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+          "version": 2,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055626,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/RGLG7P",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/RGLG7P",
+            "filename": "Table_A5_3_Final.tab",
+            "contentType": "text/tab-separated-values",
+            "friendlyType": "Tab-Delimited",
+            "filesize": 29206978,
+            "storageIdentifier": "s3://dvn-cloud:15ee400b854-f3c61006e656",
+            "originalFileFormat": "application/x-stata",
+            "originalFormatLabel": "Stata Binary",
+            "originalFileSize": 13454273,
+            "originalFileName": "Table_A5_3_Final.dta",
+            "UNF": "UNF:6:Xznk1FDbkTdQTWo8C4E4Kw==",
+            "rootDataFileId": -1,
+            "md5": "67fc4fdef115df195897fbc0e2b91ddb",
+            "checksum": {
+              "type": "MD5",
+              "value": "67fc4fdef115df195897fbc0e2b91ddb"
+            },
+            "tabularData": true,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Data",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        },
+        {
+          "label": "Table_A5.do",
+          "restricted": false,
+          "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+          "version": 1,
+          "datasetVersionId": 129046,
+          "dataFile": {
+            "id": 3055642,
+            "persistentId": "doi:10.7910/DVN/7MEXN4/9D2DLV",
+            "pidURL": "https://doi.org/10.7910/DVN/7MEXN4/9D2DLV",
+            "filename": "Table_A5.do",
+            "contentType": "application/x-stata-syntax",
+            "friendlyType": "Stata Syntax",
+            "filesize": 1374,
+            "storageIdentifier": "s3://dvn-cloud:15ee400bae0-388943b73acc",
+            "rootDataFileId": -1,
+            "md5": "edd477cc9121a844e85a302620278868",
+            "checksum": {
+              "type": "MD5",
+              "value": "edd477cc9121a844e85a302620278868"
+            },
+            "tabularData": false,
+            "creationDate": "2017-10-03",
+            "publicationDate": "2017-10-03",
+            "directoryLabel": "Data_Do_Files_For_Data_Brief_09-15-2017/Do_Files",
+            "lastUpdateTime": "2017-10-03T23:13:10Z",
+            "fileAccessRequest": false
+          }
+        }
+      ]
+    }
+  }
+}

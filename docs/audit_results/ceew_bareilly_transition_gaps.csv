@@ -1,0 +1,3 @@
+district,transition,previous_end,next_start,gap_hours,gap_days
+bareilly,2019 -> 2020,2019-12-31 23:57:00,2020-01-01 00:00:00,0.05,0.0
+bareilly,2020 -> 2021,2020-12-31 23:57:00,2021-01-01 00:00:00,0.05,0.0

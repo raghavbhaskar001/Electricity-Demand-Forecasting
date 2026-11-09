@@ -1,0 +1,32 @@
+Audit_ID,Category,Item,Status,Evidence,Blocks_Training
+AUDIT_1.1,Raw Data & Provenance,Repository DOIs and Attribution,PASS,Harvard Dataverse DOI 10.7910/DVN/7MEXN4 (Delhi) & 10.7910/DVN/GOCHJH (CEEW). CC0 1.0 & CC BY-NC-SA 4.0 licenses verified.,NO
+AUDIT_1.2,Raw Data & Provenance,Raw File Hashes & Byte Sizes,PASS,"All 9 raw files (1,077,613,531 bytes) match acquisition manifest MD5 and SHA-256 hashes with 100% precision. Zero raw bytes modified.",NO
+AUDIT_1.3,Raw Data & Provenance,Timestamp Cadence & Timezone,PASS,"All timestamps aligned to Indian Standard Time (IST, UTC+5:30). Interval-ending convention verified. CEEW native 3-min, Delhi native 15-min.",NO
+AUDIT_1.4,Raw Data & Provenance,Fixed Cohort Definitions & Gaps,PASS,"19 Delhi apartments, 38 Mathura meters, 46 Bareilly meters identified via multi-year telemetry tenure. New Year gaps characterized without interpolation.",NO
+AUDIT_1.5,Raw Data & Provenance,Non-Fabrication Verification,PASS,"Audit confirms zero synthetic observations, zero imputed data points, and zero row-averaging across power outages.",NO
+AUDIT_2.1,Target Construction,IIIT Delhi Target Conversion,PASS,kWh = exp(lnenergy) and kW = 4 * kWh verified. Primary cohort requires 19/19 apartments valid (553 intervals); sensitivity (18/19) reported as partial sum.,NO
+AUDIT_2.2,Target Construction,CEEW 15-Min 5-Subinterval Aggregation,PASS,"Exact five 3-min subintervals {T-12, T-9, T-6, T-3, T} enforced. Incomplete windows rejected to NaN (0.13%-0.31%). kW = 4 * sum(kWh).",NO
+AUDIT_2.3,Target Construction,Zero-Load vs. Grid Outage Disaggregation,PASS,"Zero-load (V>=150V, I=0A, kWh=0 -> 0.0 kW) preserved. Grid outage (V<50V, I=0A) flagged with dedicated boolean flags.",NO
+AUDIT_2.4,Target Construction,Aggregate Cohort Eligibility Thresholds,PASS,"Primary aggregate requires >=90% reporting meters (Mathura: 9,813 intervals; Bareilly: 9,721 intervals). Sensitivity requires 85-89%.",NO
+AUDIT_3.1,Weather Features,ERA5-Land Grid Coordinates & Provenance,PASS,"Open-Meteo ERA5-Land Reanalysis (CC BY 4.0). Offsets: Delhi 3.96 km, Mathura 4.46 km, Bareilly 4.65 km. All 6 files hash verified.",NO
+AUDIT_3.2,Weather Features,Dual Weather Architecture Separation,PASS,Retrospective reanalysis (retro_*) and operational availability (operational_*) separated into distinct feature columns in Parquet tables.,NO
+AUDIT_3.3,Weather Features,Operational 5-Day Latency Enforcement,PASS,Operational cutoff t <= T - 120h enforced via backward as-of merge. Observation age tracked (~120 hours). Zero future weather leakage.,NO
+AUDIT_4.1,EDA Validity,Fig 3 Bareilly Panel Data Populated,PASS,"BR02-BR06 panel populated with genuinely observed data (2019-08-28 to 2019-09-04, 672 non-null intervals). 284,206 colored pixels verified.",NO
+AUDIT_4.2,EDA Validity,Fig 4 Quadratic Curve Bounded to Domain,PASS,"truncate=True and ax.set_ylim(bottom=0) enforced in src/generate_eda.py. Fitted curve strictly bounded to observed domain [8.7, 43.8] C.",NO
+AUDIT_4.3,EDA Validity,Fig 4 Correlations & Exploratory Labeling,PASS,"Pearson r, Spearman rho, and sample count N displayed in titles. Fitted lines explicitly labeled 'Exploratory Association' in plot legends.",NO
+AUDIT_4.4,EDA Validity,Fig 5 Metric Renamed to Telemetry Reporting,PASS,X-axis and titles renamed to 'Telemetry Reporting Ratio' across Mathura and Bareilly histograms.,NO
+AUDIT_5.1,Sequence & Boundaries,Lookback Horizon & Step Definition,PASS,Lookback L=16 steps (4.0 hours) and forecast horizon H=1 step (15 minutes) identically applied across all models.,NO
+AUDIT_5.2,Sequence & Boundaries,Contiguous Slicing Without Gap Crossing,PASS,"Valid mask requires all 17 steps [i, ..., i+16] present. Zero sequences cross missing telemetry intervals or annual gaps.",NO
+AUDIT_5.3,Sequence & Boundaries,Meter-Wise Sequence Census Reconciliation,PASS,Exported to docs/meter_wise_sequence_census.csv. All 103 meters reconcile with 0 discrepancy: Train (70%) + Purge1 (16) + Val (15%) + Purge2 (16) + Test = Total.,NO
+AUDIT_5.4,Sequence & Boundaries,16-Step Sequence-Window Purge Verification,PASS,Audited in docs/all_series_boundary_purge_audit.csv. 106 / 106 series pass with 0 timestamp overlap. 15.0 min boundary gap mathematically proven.,NO
+AUDIT_6.1,Scaling & Leakage,Train-Only Scaler Fitting,PASS,Feature and target StandardScaler fit strictly on training partition. Val and Test transformed using frozen statistics.,NO
+AUDIT_6.2,Scaling & Leakage,Target Inverse Recovery,PASS,Inverse transform recovered original target values with 1e-5 numerical precision. Zero target leakage in input features.,NO
+AUDIT_7.1,Baselines & Evaluation,Persistence Baseline Implementation,PASS,Naive Persistence (y_{t+1} = y_t) and Seasonal Previous-Day Persistence (y_{t+1} = y_{t+1-96}) implemented in src/baselines.py.,NO
+AUDIT_7.2,Baselines & Evaluation,Full-Test vs. Matched-Subset Benchmark,PASS,"Exported to artifacts/metrics/baseline_benchmarks.json. Seasonal Skill Score computed strictly on matched test timestamps (-1.23 Mathura, -3.20 Bareilly).",NO
+AUDIT_7.3,Baselines & Evaluation,Physical Units & Statistical Testing Guard,PASS,All metrics in physical kW. WAPE and MAPE zero-load guarded (<0.01 kW). ISS-008 mandates Diebold-Mariano/HAC testing for autocorrelated sequences.,NO
+AUDIT_8.1,Model Architectures,"1D CNN, LSTM, CNN-LSTM Architecture Parity",PASS,"Verified in src/models/. Balanced parameter capacity: 1D CNN ~52k-54k, LSTM ~52k-55k, CNN-LSTM ~69k-71k. Input shape (B, 16, F), output (B, 1).",NO
+AUDIT_8.2,Model Architectures,Reproducibility & Mode Handling,PASS,Fixed seed 42 in config.yaml. Model train() and eval() modes strictly toggled with torch.no_grad() during validation and testing.,NO
+AUDIT_9.1,Training Pipeline,"Optimization, Loss & Checkpointing",PASS,"AdamW, HuberLoss, ReduceLROnPlateau, gradient clipping (1.0), early stopping (patience 8-10), best validation weights restored.",NO
+AUDIT_9.2,Training Pipeline,Colab GPU Readiness & Path Resolution,PASS,"notebooks/02_colab_training_pipeline.ipynb updated with Google Colab environment check, Drive mount snippet, and robust path resolution.",NO
+AUDIT_10.1,Reproducibility,Configuration Synchronization,PASS,"config/config.yaml synchronized with reconciled census, lookback scope documentation, and experimental feature sets.",NO
+AUDIT_10.2,Reproducibility,Known Issues Register Status,PASS,docs/KNOWN_ISSUES.md tracks ISS-001 through ISS-009. Zero uncharacterized blockers remain.,NO

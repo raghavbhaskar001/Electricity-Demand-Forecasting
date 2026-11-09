@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "project": "Electricity Demand Forecasting Using Deep Learning",
+    "study_scale": [
+      "aggregate_cohort",
+      "individual_meter"
+    ],
+    "lookback_len": 16,
+    "lookback_hours": 4.0,
+    "horizon_steps": 1,
+    "horizon_minutes": 15,
+    "train_val_test_split": "70/15/15 chronological with L=16 boundary purge gap"
+  },
+  "aggregates": {
+    "mathura": {
+      "census": {
+        "total_sequences": 9005,
+        "train_sequences": 6303,
+        "val_sequences": 1350,
+        "test_sequences": 1320,
+        "test_start_ts": "2019-10-13T18:30:00.000000",
+        "test_end_ts": "2020-02-19T23:45:00.000000"
+      },
+      "full_test_evaluation": {
+        "test_sample_count": 1320,
+        "naive_persistence": {
+          "rmse_kw": 1.2033,
+          "mae_kw": 0.8713,
+          "wape_pct": 11.22,
+          "mape_pct": 12.33,
+          "r2_score": 0.8825,
+          "nrmse_pct": 15.5,
+          "persistence_skill_score": 0.0,
+          "peak_mae_kw": 1.1575,
+          "peak_mape_pct": 6.57,
+          "mape_exclusion_threshold_kw": 0.01
+        },
+        "seasonal_coverage_ratio": 0.4606,
+        "seasonal_valid_count": 608,
+        "seasonal_missing_count": 712
+      },
+      "matched_subset_evaluation": {
+        "matched_sample_count": 608,
+        "coverage_ratio": 0.4606,
+        "naive_persistence_matched": {
+          "rmse_kw": 1.2762,
+          "mae_kw": 0.9625,
+          "wape_pct": 9.83,
+          "mape_pct": 11.05,
+          "r2_score": 0.8947,
+          "nrmse_pct": 13.03,
+          "persistence_skill_score": 0.0,
+          "peak_mae_kw": 1.1948,
+          "peak_mape_pct": 6.22,
+          "mape_exclusion_threshold_kw": 0.01
+        },
+        "seasonal_persistence_matched": {
+          "rmse_kw": 1.9059,
+          "mae_kw": 1.46,
+          "wape_pct": 14.9,
+          "mape_pct": 15.98,
+          "r2_score": 0.7651,
+          "nrmse_pct": 19.46,
+          "persistence_skill_score": -1.2301,
+          "peak_mae_kw": 2.8163,
+          "peak_mape_pct": 14.36,
+          "mape_exclusion_threshold_kw": 0.01
+        },
+        "seasonal_skill_score_vs_naive": -1.2301
+      }
+    },
+    "bareilly": {
+      "census": {
+        "total_sequences": 8585,
+        "train_sequences": 6009,
+        "val_sequences": 1287,
+        "test_sequences": 1257,
+        "test_start_ts": "2020-05-12T18:45:00.000000",
+        "test_end_ts": "2020-08-23T23:45:00.000000"
+      },
+      "full_test_evaluation": {
+        "test_sample_count": 1257,
+        "naive_persistence": {
+          "rmse_kw": 2.3063,
+          "mae_kw": 1.7289,
+          "wape_pct": 8.97,
+          "mape_pct": 10.06,
+          "r2_score": 0.8452,
+          "nrmse_pct": 11.97,
+          "persistence_skill_score": 0.0,
+          "peak_mae_kw": 2.221,
+          "peak_mape_pct": 6.8,
+          "mape_exclusion_threshold_kw": 0.01
+        },
+        "seasonal_coverage_ratio": 0.4161,
+        "seasonal_valid_count": 523,
+        "seasonal_missing_count": 734
+      },
+      "matched_subset_evaluation": {
+        "matched_sample_count": 523,
+        "coverage_ratio": 0.4161,
+        "naive_persistence_matched": {
+          "rmse_kw": 2.3525,
+          "mae_kw": 1.7626,
+          "wape_pct": 8.8,
+          "mape_pct": 9.66,
+          "r2_score": 0.8529,
+          "nrmse_pct": 11.75,
+          "persistence_skill_score": 0.0,
+          "peak_mae_kw": 2.1399,
+          "peak_mape_pct": 6.53,
+          "mape_exclusion_threshold_kw": 0.01
+        },
+        "seasonal_persistence_matched": {
+          "rmse_kw": 4.8224,
+          "mae_kw": 3.8024,
+          "wape_pct": 18.99,
+          "mape_pct": 21.87,
+          "r2_score": 0.382,
+          "nrmse_pct": 24.09,
+          "persistence_skill_score": -3.2021,
+          "peak_mae_kw": 2.9886,
+          "peak_mape_pct": 9.03,
+          "mape_exclusion_threshold_kw": 0.01
+        },
+        "seasonal_skill_score_vs_naive": -3.2021
+      }
+    },
+    "delhi_exploratory": {
+      "census": {
+        "total_sequences": 96,
+        "train_sequences": 67,
+        "val_sequences": 13,
+        "test_sequences": 0,
+        "note": "Insufficient sequence count for test partition after boundary purge"
+      }
+    }
+  },
+  "individual_meters": {
+    "mathura": {
+      "census": {
+        "total_sequences": 1536402,
+        "train_sequences": 1075464,
+        "val_sequences": 230441,
+        "test_sequences": 229281,
+        "purge_sequences": 1216,
+        "reconciled_sum": 1536402,
+        "evaluated_meters": 38
+      },
+      "pooled": {
+        "rmse_kw": 0.211,
+        "mae_kw": 0.0707,
+        "wape_pct": 38.13,
+        "mape_pct": 54.6,
+        "r2_score": 0.6002,
+        "nrmse_pct": 113.8,
+        "persistence_skill_score": 0.0,
+        "peak_mae_kw": 0.4658,
+        "peak_mape_pct": 36.57,
+        "mape_exclusion_threshold_kw": 0.01,
+        "total_test_sequences": 229281,
+        "evaluated_meter_count": 38
+      },
+      "meter_distribution": {
+        "rmse_kw": {
+          "median": 0.1558,
+          "iqr": 0.166,
+          "min": 0.0085,
+          "max": 0.4602
+        },
+        "mae_kw": {
+          "median": 0.0578,
+          "iqr": 0.0525,
+          "min": 0.0039,
+          "max": 0.1929
+        },
+        "wape_pct": {
+          "median": 44.86,
+          "iqr": 18.55,
+          "min": 13.48,
+          "max": 117.67
+        },
+        "r2_score": {
+          "median": 0.3769,
+          "iqr": 0.5507,
+          "min": -0.729,
+          "max": 0.7984
+        }
+      },
+      "meter_count": 38
+    },
+    "bareilly": {
+      "census": {
+        "total_sequences": 2668842,
+        "train_sequences": 1868167,
+        "val_sequences": 400306,
+        "test_sequences": 398897,
+        "purge_sequences": 1472,
+        "reconciled_sum": 2668842,
+        "evaluated_meters": 46
+      },
+      "pooled": {
+        "rmse_kw": 0.2755,
+        "mae_kw": 0.1114,
+        "wape_pct": 27.22,
+        "mape_pct": 39.49,
+        "r2_score": 0.7425,
+        "nrmse_pct": 67.32,
+        "persistence_skill_score": 0.0,
+        "peak_mae_kw": 0.4537,
+        "peak_mape_pct": 20.13,
+        "mape_exclusion_threshold_kw": 0.01,
+        "total_test_sequences": 398897,
+        "evaluated_meter_count": 46
+      },
+      "meter_distribution": {
+        "rmse_kw": {
+          "median": 0.1529,
+          "iqr": 0.2183,
+          "min": 0.0,
+          "max": 0.6687
+        },
+        "mae_kw": {
+          "median": 0.0658,
+          "iqr": 0.1172,
+          "min": 0.0,
+          "max": 0.3847
+        },
+        "wape_pct": {
+          "median": 27.61,
+          "iqr": 14.85,
+          "min": 8.71,
+          "max": 105.18
+        },
+        "r2_score": {
+          "median": 0.6269,
+          "iqr": 0.249,
+          "min": -0.164,
+          "max": 1.0
+        }
+      },
+      "meter_count": 46
+    }
+  }
+}

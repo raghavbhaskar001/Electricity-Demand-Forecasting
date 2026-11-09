@@ -1,0 +1,4 @@
+district,year,filename,total_rows,distinct_meters,start_time,end_time,outage_records,outage_pct,zero_load_records,zero_load_pct,overvoltage_records,undervoltage_records,high_load_spike_records,neg_energy_records,freq_anomaly_records,v_mean,v_std,i_mean,kwh_mean_3min,freq_mean
+mathura,2019,CEEW - Smart meter data Mathura 2019.csv,3588874,38,2019-05-01 00:00:00,2019-12-31 23:57:00,264946,7.38,127264,3.55,27425,11550,0,0,267646,223.4,66.3,1.94,0.0203,46.29
+mathura,2020,CEEW - Smart meter data Mathura 2020.csv,3759360,38,2020-01-01 00:00:00,2020-12-31 23:57:00,417965,11.12,136632,3.63,3392,3609,0,0,418924,215.0,78.2,1.5,0.0154,44.44
+mathura,2021,CEEW - Smart meter data Mathura 2021.tab,550560,35,2021-01-01 00:00:00,2021-02-20 23:57:00,66554,12.09,12800,2.32,1649,184,0,0,66652,223.7,83.9,0.71,0.0069,43.96

@@ -1,0 +1,4 @@
+dataset,total_intervals,primary_valid_intervals,sensitivity_valid_intervals,individual_meters,fixed_cohort_size
+IIIT Delhi,27359,553,2262,19,
+CEEW Mathura,63553,9813,3721,38,38.0
+CEEW Bareilly,87073,9721,10706,46,46.0

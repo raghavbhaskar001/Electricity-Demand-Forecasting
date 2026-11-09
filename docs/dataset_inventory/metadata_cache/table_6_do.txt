@@ -1,0 +1,25 @@
+use $data/Table_6_1_Final.dta, replace
+xtset apt timestamp
+xtgls lnenergy hour_temp post finpost healthpost tt tt2 tt3 i.dayofweek i.hour i.apt, panels(h) corr(psar1) force
+outreg2 using $tables/Table_6, keep(hour_temp post finpost healthpost) label replace ///
+	ctitle("ln(15 Minute kWh)") sortvar(mean_daily_temp hour_temp post finpost healthpost) addtext(Household Fixed Effects, Yes) // Cubic Time Trend, Yes, Day of Week Fixed Effect, Yes, Hour of Day Fixed Effects, Yes, 
+
+use $data/Table_6_2_Final.dta, replace
+xtset apt timestamp
+xtgls lnenergy hour_temp post finpost healthpost tt tt2 tt3 i.dayofweek i.hour i.apt, panels(h) corr(psar1) force
+outreg2 using $tables/Table_6, keep(hour_temp post finpost healthpost) label append ///
+	ctitle("ln(30 Minute kWh)") addtext(Household Fixed Effects, Yes) // Cubic Time Trend, Yes, Day of Week Fixed Effect, Yes, Hour of Day Fixed Effects, Yes, 
+
+use $data/Table_6_3_Final.dta, replace
+xtset apt timestamp
+xtgls lnenergy hour_temp post finpost healthpost tt tt2 tt3 i.dayofweek i.hour i.apt, panels(h) corr(psar1) force
+outreg2 using $tables/Table_6, keep(hour_temp post finpost healthpost) label append ///
+	ctitle("ln(Hourly kWh)") addtext(Household Fixed Effects, Yes) // Cubic Time Trend, Yes, Day of Week Fixed Effect, Yes, Hour of Day Fixed Effects, Yes, 
+
+use $data/Table_6_4_Final.dta, replace
+xtset apt timestamp
+xtgls lnenergy mean_daily_temp post finpost healthpost tt tt2 tt3 i.dayofweek i.apt, panels(h) corr(psar1) force
+outreg2 using $tables/Table_6, keep(mean_daily_temp post finpost healthpost post finpost healthpost) label  ///
+	ctitle("ln(Daily kWh)") addtext(Household Fixed Effects, Yes) sortvar(mean_daily_temp hour_temp ) append excel // Cubic Time Trend, Yes, Day of Week Fixed Effect, Yes, Hour of Day Fixed Effects, No, 
+
+ 

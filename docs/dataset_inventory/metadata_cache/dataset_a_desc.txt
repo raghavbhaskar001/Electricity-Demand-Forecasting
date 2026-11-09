@@ -1,0 +1,157 @@
+Data description for Dataset on Information Strategies for Energy Conservation: A Field Experiment in 
+India  
+ 
+Authors: Victor L. Chen1, Magali A. Delmas,2,3*Stephen L. Locke,4 Amarjeet Singh5 
+Affiliations: 1UCLA Electrical Engineering,  2UCLA Institute of the Environment and Sustainability, 3UCLA 
+Anderson School of Management, 4Western Kentucky University, 5Indraprastha Institute of 
+Information Technology 
+Contact email: * delmas@ucla.edu  
+ 
+Abstract 
+The data presented in this article are related to the research article entitled: “Information 
+Strategies for Energy Conservation: A Field Experiment in India” (Victor L. Chen, Magali A. Delmas, 
+Stephen L. Locke, Amarjeet Singh, 2017).The availability of high‐resolution electricity data offers 
+benefits to both utilities and consumers to understand the dynamics of energy consumption for 
+example, between billing periods or times of peak demand. However, few public datasets with 
+high‐temporal resolution have been available to researchers on electricity use, especially at the 
+appliance‐level. In this article, we describe data collected in a residential field experiment for 19 
+apartments at an Indian faculty housing complex during the period from August 1, 2013 to May 12, 
+2014. The dataset includes detailed information about electricity consumption. It also includes 
+information on apartment characteristics and hourly weather variation to enable further 
+studies of energy performance. These data can be used by researchers as training datasets to 
+evaluate electricity usage consumption.  
+Specifications Table  
+Subject area  Economics, Engineering, Psychology 
+More specific subject area  Energy, Consumer Behavior, Smart Grid 
+Type of data  Experimental data 
+How data was acquired  The electricity use data was collected at the field site by direct 
+measurement during the period from August 1, 2013 to May 12, 2014. 
+Apartment and household characteristics were collected through a survey 
+that was completed by each participating household at the beginning of 
+the experiment. The weather data was obtained from the 
+weatherunderground.com from the Indira Gandhi International Airport.  
+Data format  Stata .dta files 
+Experimental factors  The dataset includes information about electricity consumption, weather, 
+apartment, and household characteristics.  
+Experimental features  Aggregate electricity consumption was measured for each participating 
+household. The sampling interval for the high‐frequency data is every 
+thirty seconds but has been aggregated to fifteen minute, thirty minute, 
+hourly, and daily measurements. The weather variables update hourly 
+from station measurements. 
+Data source location  Field Site: Indraprastha Institute of Information Technology faculty 
+housing apartments, New Delhi, India 
+Data accessibility  Data is available at TBA 
+ 
+Value of the data  
+ Features high‐frequency electricity data; among the highest resolution available to‐date in a 
+behavioral experiment in a developing country 
+ Measures behavioral responses to information about electricity consumption 
+ 
+Data 
+The data described in this article was acquired 24 hours a day in a field experiment at Indraprastha 
+Institute of Information Technology in New Delhi, Delhi, India during the period from August 1, 2013 to 
+May 12, 2014. The raw data includes (i) time stamp; (ii) electricity consumption in kilowatt‐hour (kWh) 
+per unit time; (iii) weather data; (iv) engagement with the treatment messages and online energy 
+dashboard; and (v) apartment dwelling and occupancy characteristics, which do not vary with time 
+during data collection. For convenience, the data is provided in panel format for time series analysis. For 
+time varying variables, each successive row represents a fifteen minute, thirty minute, hour, or daily 
+increment. 
+ 
+Materials and Methods 
+The baseline period for all metered apartments was approximately lasted from August 1, 2013 to 
+February 18, 2014. During this baseline period, no behavioral interventions were performed. The 
+treatment interventions began on February 19, 2014 and the treatment groups were sent weekly emails 
+about their electricity usage and were given access to an online electricity dashboard where they could 
+monitor their electricity usage in real time.  
+ 
+File Structure  
+A Stata .dta file (version 12) for each table has been included. If a table uses data measured at different 
+frequencies or includes a different number of observations, a file has been created for each table and 
+column. For example, Table_2.dta can be used to replicate all of Table 2 while Table_6_1.dta can be 
+used to replicate column 1 of Table 6. A corresponding Stata .do file has been included that will load the 
+appropriate dataset and replicate the specified table.  
+ 
+Variable Descriptions.  
+The following tables describe the variables in each dataset. The frequency of data can be determined by 
+looking at the timestamp.     
+ 
+ 
+ 
+ 
+ 
+Table 1: Description of Survey Variables 
+Variable   Description 
+id1  Survey respondent identifier 
+buy_energy_efficient  How often respondent buys energy 
+efficient appliances 
+change_appliance_settings  How often respondent changes 
+appliance settings 
+switchoff_lights  How often respondent switches off 
+lights during the day 
+turnoff_ac  How often respondent turns off air 
+conditioner when nobody is in the 
+room 
+unplug_appliances  How often respondent unplugs 
+appliances 
+mot_buy_energy_efficient  Motivation for buying energy efficient 
+appliances 
+mot_change_appliance_settings  Motivation for changing appliance 
+settings 
+mot_switchoff_lights  Motivation for switching off lights 
+mot_turnoff_ac  Motivation for turning off air 
+conditioner 
+mot_unplug_appliances  Motivation for unplugging appliances 
+subsample  Respondents that are similar to the 
+experimental sample 
+Notes: Motivations are listed as values 7‐16 and respondents can list 
+more than one motivation. The motivations are coded as follows: 7=save 
+money, 8=habit, 9=work around electricity and water shortages, 
+10=improve health, 11=to provide a better life for future generations, 
+12=because I am environmentally friendly, 13=because it is trendy, 
+14=ethical/moral reasons, 15= cultural, traditional, religious, or spiritual 
+reasons, 16=other.  
+   
+  
+ 
+Table 2. Description of Variables Measured During the Experiment 
+Variable   Description 
+adults  Number of adults in the apartment 
+apt  Apartment identifier (1‐19) 
+control  Apartment is in the control group 
+dayofweek  Day of the week 
+emailsopened  Number of treatment emails that were opened by each apartment 
+energy  kWh per unit of time 
+financial  Apartment is in the financial group 
+finpost  Financial group x Post 
+floor  Floor on which apartment is located 
+ga_fin_1  # of sessions x financial group x post 
+ga_health_1  # of sessions x health group x post 
+group  Equal to one if the apartment is in the control group, equal to two if the 
+apartment is in the financial group, and equal to three if the apartment is in the 
+health group. 
+group_name  Group to which each apartment belongs 
+haskids  At least one child lives in the apartment 
+health  Apartment is in the health group 
+healthpost  Health group x Post 
+hour  Hour of day 
+hour_temp  Hourly temperature 
+lnenergy  Natural log of energy per unit of time. Check timestamp for frequency of data. 
+male  Head of household is male 
+mc_fin  Emails opened x financial group x post 
+mc_health  Emails opened x health group x post 
+mean_daily_temp  Average daily temperature 
+numberofsessions  Number of times each apartment viewed their online energy dashboard 
+pctmissing  % of hourly observations missing 
+post  Equal to one after the treatment began, equal to zero otherwise 
+timestamp  The time stamp in YYYY‐MM‐DD hh:mm:ss 
+tt  Day since beginning of experiment 
+tt2  tt squared 
+tt3  tt cubed 
+uniqueapt  A variable equal to one once for each apartment in the study.  
+week  Week of experiment 
+ 
+Acknowledgements 
+We acknowledge support from the National Science Foundation NTS‐1257189 and CNS‐050938 
+References 
+Chen, V.L., Delmas, M.A., Locke S. & Singh, A. 2017. Information Strategies for Energy Conservation: A 
+Field Experiment in India. Energy Economics. https://doi.org/10.1016/j.eneco.2017.09.004 

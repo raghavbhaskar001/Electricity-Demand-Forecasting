@@ -1,0 +1,117 @@
+# ==============================================================================
+# Git Ignore Policy - Electricity Demand Forecasting Project
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Python Virtual Environments
+# ------------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# ------------------------------------------------------------------------------
+# 2. Python Bytecode, Caches and Build Artifacts
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# ------------------------------------------------------------------------------
+# 3. Dataset Storage Rules
+#    Raw/interim datasets and large individual-meter Parquets (~319 MB) are
+#    excluded from Git. Compact aggregate feature Parquets (~2.9 MB) and
+#    data/README.md are tracked so the simulator and aggregate pipeline run
+#    out-of-the-box.
+# ------------------------------------------------------------------------------
+data/raw/**
+!data/raw/
+!data/raw/**/.gitkeep
+
+data/interim/**
+!data/interim/
+!data/interim/**/.gitkeep
+
+data/processed/**
+!data/processed/
+!data/processed/**/.gitkeep
+!data/processed/mathura_features.parquet
+!data/processed/bareilly_features.parquet
+!data/README.md
+
+# ------------------------------------------------------------------------------
+# 4. Model Checkpoints
+#    The 18 verified aggregate feeder checkpoints (~4.18 MB total) are tracked
+#    to support reproducible evaluation and live inference. Other weight binaries
+#    remain ignored unless explicitly un-ignored.
+# ------------------------------------------------------------------------------
+*.pt
+*.pth
+*.onnx
+*.h5
+*.pb
+*.tflite
+*.ckpt
+
+artifacts/checkpoints/**
+!artifacts/checkpoints/
+!artifacts/checkpoints/**/.gitkeep
+!artifacts/checkpoints/agg_*.pt
+
+# ------------------------------------------------------------------------------
+# 5. Logs and Runtime Output
+# ------------------------------------------------------------------------------
+logs/**
+!logs/
+!logs/**/.gitkeep
+*.log
+
+# ------------------------------------------------------------------------------
+# 6. Sensitive Information, Environment Variables and Credentials
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+secrets.yaml
+credentials.json
+*.pem
+*.key
+
+# ------------------------------------------------------------------------------
+# 7. Unapproved Root Duplicates, Presentation Drafts & One-Off Helper Scripts
+#    (Pending explicit user approval for deletion in AUDIT/CLEANUP_PLAN.md)
+# ------------------------------------------------------------------------------
+/02_colab_training_pipeline.ipynb
+/training_results.json
+/master_experiment_comparison.png
+/build_presentation.py
+/FINAL_ELECTRICITY_DEMAND_FORECASTING_PRESENTATION.pptx
+/FINAL_PRESENTATION_CONTENT_AND_SOURCES.md
+/FINAL_PROJECT_RESULTS_AUDIT.md
+/MASTER_PRESENTATION_GENERATION_PROMPT.md
+docs/FINAL_PRESENTATION_MASTER_PROMPT.md
+scripts/apply_robust_section7.py
+scripts/apply_section_7.py
+scripts/setup_notebook_section7.py
+scripts/update_colab_nb.py
+scripts/update_notebook_export_cell.py
+scripts/verify_notebook_section7.py
+
+# ------------------------------------------------------------------------------
+# 8. IDE, Editor and Operating System Metadata
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

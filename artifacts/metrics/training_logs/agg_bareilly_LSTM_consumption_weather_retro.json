@@ -1,0 +1,89 @@
+{
+  "record": {
+    "exp_id": "agg_bareilly_LSTM_consumption_weather_retro",
+    "cohort_type": "aggregate",
+    "district": "bareilly",
+    "model": "LSTM",
+    "feature_config": "consumption_weather_retro",
+    "in_features": 10,
+    "best_epoch": 5,
+    "total_epochs": 13,
+    "training_duration_sec": 9.32,
+    "best_val_loss": 0.129062,
+    "metrics": {
+      "rmse_kw": 4.1482,
+      "mae_kw": 3.0338,
+      "wape_pct": 15.74,
+      "mape_pct": 15.45,
+      "r2_score": 0.4993,
+      "nrmse_pct": 21.53,
+      "persistence_skill_score": -2.2351,
+      "peak_mae_kw": 10.6289,
+      "peak_mape_pct": 32.51,
+      "mape_exclusion_threshold_kw": 0.01
+    },
+    "checkpoint_path": "artifacts\\checkpoints\\agg_bareilly_LSTM_consumption_weather_retro.pt"
+  },
+  "history": {
+    "train_loss": [
+      0.261117,
+      0.148939,
+      0.127976,
+      0.124165,
+      0.121887,
+      0.11998,
+      0.117244,
+      0.116286,
+      0.115166,
+      0.114021,
+      0.110664,
+      0.112434,
+      0.109658
+    ],
+    "val_loss": [
+      0.231991,
+      0.166841,
+      0.158559,
+      0.141327,
+      0.129062,
+      0.155654,
+      0.137293,
+      0.134452,
+      0.133001,
+      0.160539,
+      0.136382,
+      0.139839,
+      0.142413
+    ],
+    "lr": [
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.0005,
+      0.0005,
+      0.0005,
+      0.0005
+    ],
+    "epoch_times": [
+      0.72,
+      0.7,
+      0.71,
+      0.71,
+      0.72,
+      0.7,
+      0.76,
+      0.72,
+      0.72,
+      0.7,
+      0.71,
+      0.71,
+      0.71
+    ]
+  }
+}
