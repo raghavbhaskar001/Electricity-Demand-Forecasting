@@ -39,9 +39,9 @@ Executed across `.git/`:
   - Removed Google Colab's automatic `metadata.executionInfo` (which contained an internal Google numeric `userId`) and `metadata.colab.base_uri` across all 5 code cells that had them, while preserving all 4 empirical training log/figure outputs intact.
 
 ### 2.3 Secret & Local-Path Scan Across All 195 Staged Files
-Scanned all non-binary staged files against Gitleaks-equivalent rule patterns (`aws_access_key`, `aws_secret_key`, `github_pat`, `github_fine_grained`, `google_api_key`, `google_oauth`, `slack_token`, `private_key_block`, `generic_bearer_or_secret`, `mongodb_postgres_uri`) and local-path regexes (`E:\CNN model`, `e:/CNN model`, `C:\Users\`):
+Scanned all non-binary staged files against Gitleaks-equivalent rule patterns (`aws_access_key`, `aws_secret_key`, `github_pat`, `github_fine_grained`, `google_api_key`, `google_oauth`, `slack_token`, `private_key_block`, `generic_bearer_or_secret`, `mongodb_postgres_uri`) and local-path regexes (`<local-repo-path>`, `<user-profile-path>`):
 - **Secret Hits:** `0` (no credential revocation or rotation required).
-- **Local Machine Path Hits:** `0` (additionally replaced `BASE_DIR = Path("e:/CNN model")` with portable `BASE_DIR = Path(__file__).resolve().parent.parent` in `src/acquire_weather.py`, `src/audit_raw_data.py`, `src/construct_targets.py`, and `src/generate_eda.py`, and converted `docs/dataset_inventory/weather_manifest.csv` paths to relative `data/raw/weather/...`).
+- **Local Machine Path Hits:** `0` (additionally replaced hardcoded `BASE_DIR` paths with portable `BASE_DIR = Path(__file__).resolve().parent.parent` in `src/acquire_weather.py`, `src/audit_raw_data.py`, `src/construct_targets.py`, and `src/generate_eda.py`, and converted `docs/dataset_inventory/weather_manifest.csv` paths to relative `data/raw/weather/...`).
 
 ---
 
@@ -167,13 +167,50 @@ All 195 staged files fall cleanly into the following directory groups:
 - **Published Release Commit on `origin/main`:** `9769da628e783d0826d989d2459f24c1fa419361` (fast-forward push `39540e8..9769da6`, zero force-push).
 
 ### 7.3 Post-Publication Remote Tree Verification (`origin/main`)
-| Remote Verification Item | Status | Verified Details on `origin/main` (`9769da628e783d0826d989d2459f24c1fa419361`) |
+| Remote Verification Item | Status | Verified Details on `origin/main` |
 | :--- | :---: | :--- |
 | **Total Tracked Files Published** | **PASS** | Exactly `195` files in `git ls-tree -r origin/main` (`32.38 MB` total) |
 | **Root Documentation & Metadata** | **PASS** | `README.md`, `LICENSE` (MIT + dataset notices), `CITATION.cff`, `CONTRIBUTING.md`, `requirements.txt`, `.gitignore`, `.python-version`, `.env.example` |
 | **Core Source, Scripts, App & Tests** | **PASS** | `src/` (`20` files), `scripts/` (`11` files), `app/` (`11` files), `tests/` (`8` files), `config/config.yaml`, `notebooks/` (`3` files), `docs/` (`55` files), `AUDIT/` (`7` files) |
 | **Verified Aggregate Checkpoints & Artifacts** | **PASS** | All `18` `artifacts/checkpoints/agg_*.pt` files + `artifacts/metrics/*` (`37` files) + `data/processed/{mathura,bareilly}_features.parquet` |
 | **Zero Sensitive or Unapproved Files Exposed** | **PASS** | `0` `.env` files, `0` secrets, `0` raw CSV archives, `0` large individual Parquets, and `0` unapproved root duplicate/presentation files |
+
+### 7.4 Reproducible Random-Input Model Smoke Test (`seed = 20260404`)
+
+To verify end-to-end inference pipeline execution (feature scaling, tensor assembly, PyTorch state-dict loading, forward pass, and inverse target scaling) on statistically grounded synthetic inputs, `PredictionSimulator.generate_scenario(..., scenario="normal", seed=20260404)` and `PredictionSimulator.predict_next_interval(...)` were executed across all 18 aggregate checkpoints (`agg_*.pt`):
+
+- **Smoke Test Scope Note:** This reproducible random-input test verifies end-to-end inference pipeline functionality, numerical stability, and checkpoint compatibility rather than out-of-sample forecasting accuracy (which is evaluated separately on the 2021 chronological test set in `artifacts/metrics/training_results.json` and `artifacts/metrics/dm_test_results.csv`).
+- **Individual-Meter Checkpoint Availability Note:** Individual-meter binary checkpoints (`ind_*.pt`, 18 experiments) are not currently available locally in `artifacts/checkpoints/` (pending export from the Google Colab training environment), so individual-model live checkpoint inference has not been verified locally.
+
+#### Generated 16-Step Lookback Inputs (`L = 16` intervals = 4 hours, `scenario = "normal"`, `seed = 20260404`)
+- **Mathura Aggregate Input (`kW`):**
+  `[18.6979, 18.8631, 16.8176, 17.4446, 20.8494, 19.3590, 18.2333, 12.7079, 13.3471, 15.6154, 16.9210, 17.7402, 17.9222, 17.7141, 14.3335, 14.5169]`
+  - Persistence baseline ($y_t$): `14.516900 kW` | Sampled training weather window indices (`seed = 20260404`): `retro_idx = 2478`, `oper_idx = 5283`
+- **Bareilly Aggregate Input (`kW`):**
+  `[9.8312, 9.8132, 9.6141, 9.3536, 9.4316, 9.0644, 8.9242, 8.9533, 8.7281, 9.9262, 10.2242, 10.1993, 9.8378, 8.9923, 8.7796, 8.6605]`
+  - Persistence baseline ($y_t$): `8.660500 kW` | Sampled training weather window indices (`seed = 20260404`): `retro_idx = 2362`, `oper_idx = 5037`
+
+#### Complete 18-Model Inference Results (`seed = 20260404`)
+| # | Experiment ID | Checkpoint SHA-256 Prefix | Best Epoch | Input Tensor Shape | Predicted $\hat{y}_{t+1}$ (`kW`) | Persistence $y_t$ (`kW`) | $\Delta$ vs. Persistence (`kW` / `%`) | Status |
+|---:|---|---|---:|:---:|---:|---:|---:|:---:|
+| 1 | `agg_mathura_1D_CNN_consumption_only` | `16c3491f679c9424` | 8 | `(1, 16, 1)` | `14.391869` | `14.516900` | `-0.125031` (`-0.86%`) | **PASS** |
+| 2 | `agg_mathura_1D_CNN_consumption_weather_retro` | `b29d913d5abdfcfd` | 22 | `(1, 16, 10)` | `14.278379` | `14.516900` | `-0.238521` (`-1.64%`) | **PASS** |
+| 3 | `agg_mathura_1D_CNN_consumption_weather_operational` | `bad6d88f18e3d49a` | 12 | `(1, 16, 10)` | `13.974731` | `14.516900` | `-0.542169` (`-3.73%`) | **PASS** |
+| 4 | `agg_mathura_LSTM_consumption_only` | `7950c904adc30b66` | 15 | `(1, 16, 1)` | `14.343201` | `14.516900` | `-0.173699` (`-1.20%`) | **PASS** |
+| 5 | `agg_mathura_LSTM_consumption_weather_retro` | `29061fbf23d01e57` | 7 | `(1, 16, 10)` | `13.966352` | `14.516900` | `-0.550548` (`-3.79%`) | **PASS** |
+| 6 | `agg_mathura_LSTM_consumption_weather_operational` | `2be343f70ac15be1` | 11 | `(1, 16, 10)` | `14.413454` | `14.516900` | `-0.103446` (`-0.71%`) | **PASS** |
+| 7 | `agg_mathura_CNN_LSTM_consumption_only` | `d53c0f2cf178d78f` | 20 | `(1, 16, 1)` | `14.067982` | `14.516900` | `-0.448918` (`-3.09%`) | **PASS** |
+| 8 | `agg_mathura_CNN_LSTM_consumption_weather_retro` | `809787f052cfca03` | 11 | `(1, 16, 10)` | `13.771402` | `14.516900` | `-0.745498` (`-5.14%`) | **PASS** |
+| 9 | `agg_mathura_CNN_LSTM_consumption_weather_operational` | `bb1d5d00dc6cb409` | 11 | `(1, 16, 10)` | `14.189878` | `14.516900` | `-0.327022` (`-2.25%`) | **PASS** |
+| 10 | `agg_bareilly_1D_CNN_consumption_only` | `60c383c205bce997` | 14 | `(1, 16, 1)` | `8.984920` | `8.660500` | `+0.324420` (`+3.75%`) | **PASS** |
+| 11 | `agg_bareilly_1D_CNN_consumption_weather_retro` | `67e04ed9bb356d04` | 20 | `(1, 16, 10)` | `8.671537` | `8.660500` | `+0.011037` (`+0.13%`) | **PASS** |
+| 12 | `agg_bareilly_1D_CNN_consumption_weather_operational` | `7def7e7420496646` | 8 | `(1, 16, 10)` | `10.945324` | `8.660500` | `+2.284824` (`+26.38%`) | **PASS** |
+| 13 | `agg_bareilly_LSTM_consumption_only` | `bff2a38f45190e7f` | 12 | `(1, 16, 1)` | `8.926365` | `8.660500` | `+0.265865` (`+3.07%`) | **PASS** |
+| 14 | `agg_bareilly_LSTM_consumption_weather_retro` | `38d52c3a1cfa71a0` | 5 | `(1, 16, 10)` | `9.123561` | `8.660500` | `+0.463061` (`+5.35%`) | **PASS** |
+| 15 | `agg_bareilly_LSTM_consumption_weather_operational` | `fca09190a4329239` | 5 | `(1, 16, 10)` | `9.234185` | `8.660500` | `+0.573685` (`+6.62%`) | **PASS** |
+| 16 | `agg_bareilly_CNN_LSTM_consumption_only` | `3744f8946a02cf21` | 24 | `(1, 16, 1)` | `8.888174` | `8.660500` | `+0.227674` (`+2.63%`) | **PASS** |
+| 17 | `agg_bareilly_CNN_LSTM_consumption_weather_retro` | `825b76f210dee397` | 14 | `(1, 16, 10)` | `9.349030` | `8.660500` | `+0.688530` (`+7.95%`) | **PASS** |
+| 18 | `agg_bareilly_CNN_LSTM_consumption_weather_operational` | `c07b9c326cd94584` | 14 | `(1, 16, 10)` | `9.455559` | `8.660500` | `+0.795059` (`+9.18%`) | **PASS** |
 
 ---
 

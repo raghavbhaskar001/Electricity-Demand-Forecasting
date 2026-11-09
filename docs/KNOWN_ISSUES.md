@@ -1,7 +1,7 @@
 # Project Known Issues & Backlog
 
 **Project Title:** Electricity Demand Forecasting Using Deep Learning: A Comparative Study of 1D CNN, LSTM and CNN–LSTM Models  
-**Last Updated:** 2026-11-02  
+**Last Updated:** 2026-11-09  
 **Purpose:** Central tracking repository for non-critical observations, minor empirical discrepancies, and backlog items that do not block core workflow execution.
 
 ---
@@ -26,7 +26,7 @@
 
 | ID | Category | Item Description | Severity | Status / Workaround |
 |---|---|---|---|---|
-| **ENV-001** | PyTorch Wheels | Local Python version is 3.14.7; official prebuilt PyTorch binary wheels currently require Python $\le 3.12$. | Low | Local PC used for data processing, verification, and Streamlit app. Google Colab (Python 3.10/3.11 with GPU) locked as primary training environment. Optional Python 3.12 local venv reserved if local inference wheel needed. | Active workaround |
+| **ENV-001** | PyTorch Wheels | Local Python version is 3.14.7; earlier prebuilt PyTorch wheels required Python $\le 3.12$ at project start, though `torch==2.15.0+cpu` is now installed and verified locally. | Low | Local environment (`Python 3.14.7`, `torch==2.15.0+cpu`) verified across all 18 aggregate checkpoints (`agg_*.pt`) and 44 unit tests; Google Colab GPU was used for full 36-model training runs. | Resolved |
 | **ENV-002** | WMI/CIM Cmdlets | Standard PowerShell CIM cmdlets (`Get-CimInstance`) restricted under sandboxed non-elevated user token. | Low | Replaced with native .NET P/Invoke `GlobalMemoryStatusEx` and standard environment variables. | Resolved |
 
 ---
