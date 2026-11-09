@@ -8,25 +8,26 @@
 ## 1. Smart Meter Telemetry Datasets
 
 ### 1.1 CEEW Smart Meter Dataset — Mathura & Bareilly (Primary Modelling Cohorts)
-- **Source:** Council on Energy, Environment and Water (CEEW), published on Harvard Dataverse (`doi:10.7910/DVN/N3615P`, CC0 1.0).
-- **Native Resolution:** 3-minute interval cumulative energy (`t_kWh`) and diagnostic records across residential consumers in Uttar Pradesh, India.
-- **Cohort Filtering (`scripts/process_smart_meter.py`):**
-  - Each 15-minute window requires exactly 5 valid 3-minute readings (`valid_obs_count == 5`).
-  - Only meters achieving $\ge 90\%$ temporal completeness across the study period are included in the fixed modelling cohort:
+- **Source:** Council on Energy, Environment and Water (CEEW), *High frequency smart meter data from two districts in India (Mathura and Bareilly)*, published on Harvard Dataverse, Version 2.0 (`doi:10.7910/DVN/GOCHJH`, CC0 1.0 Universal Public Domain Dedication).
+- **Native Resolution:** 3-minute interval energy (`t_kWh`) and diagnostic records across residential consumers in Uttar Pradesh, India (`data/raw/ceew/`).
+- **Cohort Filtering (`src/construct_targets.py`):**
+  - Each 15-minute window requires all 5 constituent 3-minute sub-intervals (`{T-12, T-9, T-6, T-3, T}`).
+  - Only meters achieving sustained temporal completeness across the study period are included in the fixed modelling cohort:
     - **Mathura Cohort:** `38` residential meters (`May 2019 – May 2020`, `35,127` fifteen-minute timestamps in `mathura_features.parquet`, `1,568,487` meter-interval rows in `mathura_individual_meters.parquet`).
     - **Bareilly Cohort:** `46` residential meters (`May 2019 – October 2020`, `49,336` fifteen-minute timestamps in `bareilly_features.parquet`, `2,713,573` meter-interval rows in `bareilly_individual_meters.parquet`).
 
-### 1.2 IIIT Delhi Residential Electric Power Dataset (Exploratory Only)
-- **Source:** IIIT Delhi / Figshare (`doi:10.6084/m9.figshare.c.4490387`).
-- **Status:** After 15-minute resampling and contiguity filtering, the processed dataset (`delhi_features.parquet`) spans `370` rows (`~3.85 days`) yielding only `96` contiguous 16-step sequences. Because a 70/15/15 split with $L = 16$ boundary purging leaves zero valid test sequences, the New Delhi cohort is restricted to exploratory descriptive statistics and excluded from deep learning training.
+### 1.2 IIIT Delhi Faculty Housing Dataset (Exploratory Only)
+- **Source:** Indraprastha Institute of Information Technology Delhi (IIITD) & UCLA (*Replication Data for: Information Strategies for Energy Conservation: A Field Experiment in India*, Chen, Delmas, Locke, & Singh 2017, *Energy Economics* 68, 215–227), published on Harvard Dataverse, Version 1.0 (`doi:10.7910/DVN/7MEXN4`, CC0 1.0 Universal Public Domain Dedication, datafile `Table_A2_Final.tab`).
+- **Status:** While the raw panel spans 19 faculty apartments, enforcing the strict 19/19 synchronous cohort requirement and contiguity filtering in `delhi_features.parquet` leaves only `96` contiguous 16-step sequences. Because a 70/15/15 split with $L = 16$ boundary purging leaves zero valid test sequences, the New Delhi cohort is restricted to exploratory descriptive statistics and excluded from deep learning training.
 
 ---
 
 ## 2. Meteorological Reanalysis Data (Open-Meteo ERA5-Land)
 
-Hourly meteorological observations were retrieved from the Copernicus Climate Change Service (C3S) **ERA5-Land** reanalysis archive (`0.1° x 0.1°` native grid, ~9 km spatial resolution) via the Open-Meteo Historical Weather API (`scripts/download_weather.py`) at the district coordinates:
-- **Mathura:** `27.4924° N, 77.6737° E` (`UTC+05:30 / Asia/Kolkata`)
-- **Bareilly:** `28.3670° N, 79.4304° E` (`UTC+05:30 / Asia/Kolkata`)
+Hourly meteorological observations were retrieved from the Copernicus Climate Change Service (C3S) **ERA5-Land** reanalysis archive (`0.1° x 0.1°` native grid, `doi:10.24381/cds.e2161bac`, CC BY 4.0) via the Open-Meteo Historical Weather API (`src/acquire_weather.py`) at the approved grid centroids:
+- **Mathura:** `27.5220° N, 77.7044° E` (`UTC+05:30 / Asia/Kolkata`, spatial offset `4.46 km`)
+- **Bareilly:** `28.3656° N, 79.4779° E` (`UTC+05:30 / Asia/Kolkata`, spatial offset `4.65 km`)
+- **New Delhi:** `28.5764° N, 77.2893° E` (`UTC+05:30 / Asia/Kolkata`, spatial offset `3.96 km`)
 
 ### Nine Meteorological Variables
 1. `temperature_2m` (°C)

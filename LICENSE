@@ -26,10 +26,15 @@ Third-Party Dataset Attribution Notice:
 The source code and experimental tooling in this repository are licensed under
 the MIT License above. External smart-meter and meteorological datasets used in
 this research remain subject to their respective upstream terms:
-1. CEEW Smart Meter Datasets (Mathura & Bareilly, 2019-2021): Harvard Dataverse
-   (doi:10.7910/DVN/N3615P), distributed under CC0 1.0 Public Domain Dedication.
-2. Residential Electric Power Dataset (New Delhi, 2013): IIIT Delhi / Figshare
-   (doi:10.6084/m9.figshare.c.4490387), subject to the authors' dataset license.
-3. ERA5-Land Hourly Reanalysis: Copernicus Climate Change Service (C3S) via the
-   Open-Meteo Historical Weather API (doi:10.24381/cds.e2161bac), distributed
-   under the Copernicus C3S / CC BY 4.0 attribution terms.
+1. CEEW Smart Meter Dataset — "High frequency smart meter data from two districts
+   in India (Mathura and Bareilly)" (Agrawal, Mani, Ganesan, & Jain, 2021):
+   Harvard Dataverse, V2 (doi:10.7910/DVN/GOCHJH), distributed under CC0 1.0
+   Universal Public Domain Dedication.
+2. IIIT Delhi Faculty Housing Dataset — "Replication Data for: Information
+   Strategies for Energy Conservation: A Field Experiment in India" (Chen,
+   Delmas, Locke, & Singh, 2017): Harvard Dataverse, V1 (doi:10.7910/DVN/7MEXN4),
+   distributed under CC0 1.0 Universal Public Domain Dedication.
+3. ERA5-Land Hourly Reanalysis (Muñoz-Sabater et al., 2021): Copernicus Climate
+   Change Service (C3S) via the Open-Meteo Historical Weather API
+   (doi:10.24381/cds.e2161bac), distributed under Creative Commons Attribution
+   4.0 International (CC BY 4.0) / Copernicus C3S attribution terms.

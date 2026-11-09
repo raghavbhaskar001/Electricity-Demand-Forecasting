@@ -1,5 +1,7 @@
 # Electricity Demand Forecasting Using Deep Learning: A Comparative Study of 1D CNN, LSTM and CNN–LSTM Models
 
+An India-focused electricity demand forecasting project comparing 1D CNN, LSTM, and CNN–LSTM models across 36 experiments—featuring smart-meter telemetry, meteorological lag analysis, statistical evaluation, and an interactive prediction simulator.
+
 **Author:** Raghav Bhaskar  
 **Department:** Department of Electrical Engineering  
 **Institution:** Thapar Institute of Engineering & Technology, Patiala
@@ -49,10 +51,10 @@ Distribution utilities and microgrid operators rely on 15-minute load forecasts 
 
 | Cohort | Upstream Source | Coordinates | Native Cadence | Active Cohort ($\ge 90\%$ Coverage) | Study Period | Modelling Role |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Mathura** (Uttar Pradesh) | CEEW Smart Meter Dataset (`doi:10.7910/DVN/N3615P`) | `27.4924° N, 77.6737° E` | 3 min | **38 meters** | May 2019 – May 2020 (`35,127` 15-min steps) | Primary Aggregate & Individual Modelling |
-| **Bareilly** (Uttar Pradesh) | CEEW Smart Meter Dataset (`doi:10.7910/DVN/N3615P`) | `28.3670° N, 79.4304° E` | 3 min | **46 meters** | May 2019 – Oct 2020 (`49,336` 15-min steps) | Primary Aggregate & Individual Modelling |
-| **New Delhi** | IIIT Delhi Residential Dataset (`doi:10.6084/m9.figshare.c.4490387`) | `28.5450° N, 77.2732° E` | 1 min | Exploratory | `370` 15-min steps (`96` windows; `0` test windows) | Exploratory Descriptive Analysis Only |
-| **ERA5-Land Weather** | Copernicus C3S via Open-Meteo (`doi:10.24381/cds.e2161bac`) | District centroids | 60 min | 9 meteorological channels | Matched to load spans | Exogenous Weather Covariates |
+| **Mathura** (Uttar Pradesh) | CEEW Smart Meter Dataset, V2.0 (`doi:10.7910/DVN/GOCHJH`, CC0 1.0) | `27.5220° N, 77.7044° E` | 3 min | **38 meters** | May 2019 – May 2020 (`35,127` 15-min steps) | Primary Aggregate & Individual Modelling |
+| **Bareilly** (Uttar Pradesh) | CEEW Smart Meter Dataset, V2.0 (`doi:10.7910/DVN/GOCHJH`, CC0 1.0) | `28.3656° N, 79.4779° E` | 3 min | **46 meters** | May 2019 – Oct 2020 (`49,336` 15-min steps) | Primary Aggregate & Individual Modelling |
+| **New Delhi** | IIIT Delhi & UCLA Faculty Housing Dataset, V1.0 (`doi:10.7910/DVN/7MEXN4`, CC0 1.0) | `28.5764° N, 77.2893° E` | 15 min | Exploratory (`19/19` apartments) | `96` contiguous 16-step windows (`0` test windows) | Exploratory Descriptive Analysis Only |
+| **ERA5-Land Weather** | Copernicus C3S via Open-Meteo (`doi:10.24381/cds.e2161bac`, CC BY 4.0) | District centroids | 60 min | 9 meteorological channels | Matched to load spans | Exogenous Weather Covariates |
 
 ---
 

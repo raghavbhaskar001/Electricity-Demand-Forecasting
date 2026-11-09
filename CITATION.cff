@@ -8,6 +8,7 @@ authors:
     affiliation: "Department of Electrical Engineering, Thapar Institute of Engineering & Technology, Patiala"
 date-released: "2026-04-04"
 license: MIT
+repository-code: "https://github.com/raghavbhaskar001/Electricity-Demand-Forecasting"
 keywords:
   - electricity demand forecasting
   - short-term load forecasting
@@ -18,24 +19,8 @@ keywords:
   - Diebold-Mariano test
   - Indian distribution grids
 references:
-  - type: article
-    title: "Electric load forecasting based on Long Short-Term Memory network"
-    authors:
-      - family-names: Chen
-        given-names: Kunjin
-      - family-names: Chen
-        given-names: Kunlong
-      - family-names: Wang
-        given-names: Qin
-      - family-names: He
-        given-names: Ziyu
-      - family-names: Hu
-        given-names: Jun
-      - family-names: He
-        given-names: Jinliang
-    year: 2017
   - type: data
-    title: "Smart Meter Data from Mathura and Bareilly Districts, Uttar Pradesh, India"
+    title: "High frequency smart meter data from two districts in India (Mathura and Bareilly)"
     authors:
       - family-names: Agrawal
         given-names: Shalu
@@ -48,7 +33,39 @@ references:
     institution:
       name: "Council on Energy, Environment and Water (CEEW)"
     year: 2021
-    doi: "10.7910/DVN/N3615P"
+    version: "2.0"
+    doi: "10.7910/DVN/GOCHJH"
+  - type: data
+    title: "Replication Data for: Information Strategies for Energy Conservation: A Field Experiment in India"
+    authors:
+      - family-names: Chen
+        given-names: Victor L.
+      - family-names: Delmas
+        given-names: Magali A.
+      - family-names: Locke
+        given-names: Stephen L.
+      - family-names: Singh
+        given-names: Amarjeet
+    year: 2017
+    version: "1.0"
+    doi: "10.7910/DVN/7MEXN4"
+  - type: article
+    title: "Information strategies for energy conservation: A field experiment in India"
+    authors:
+      - family-names: Chen
+        given-names: Victor L.
+      - family-names: Delmas
+        given-names: Magali A.
+      - family-names: Locke
+        given-names: Stephen L.
+      - family-names: Singh
+        given-names: Amarjeet
+    journal: "Energy Economics"
+    volume: 68
+    start: 215
+    end: 227
+    year: 2017
+    doi: "10.1016/j.eneco.2017.09.004"
   - type: article
     title: "ERA5-Land: a state-of-the-art global reanalysis dataset for land applications"
     authors:

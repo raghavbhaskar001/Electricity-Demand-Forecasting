@@ -42,29 +42,24 @@ To keep the repository lightweight while allowing the interactive prediction sim
 
 | Cohort | Source | Geographic Coordinates | Native Resolution | Target Resolution | Upstream License / DOI |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Mathura** (Uttar Pradesh) | Council on Energy, Environment and Water (CEEW) Smart Meter Dataset | `27.4924° N, 77.6737° E` | 3 minutes | 15 minutes (exact 5-reading mean) | CC0 1.0 Public Domain (`doi:10.7910/DVN/N3615P`) |
-| **Bareilly** (Uttar Pradesh) | Council on Energy, Environment and Water (CEEW) Smart Meter Dataset | `28.3670° N, 79.4304° E` | 3 minutes | 15 minutes (exact 5-reading mean) | CC0 1.0 Public Domain (`doi:10.7910/DVN/N3615P`) |
-| **New Delhi** (Exploratory) | IIIT Delhi Residential Electric Power Dataset | `28.5450° N, 77.2732° E` | 1 minute | 15 minutes | Academic research use (`doi:10.6084/m9.figshare.c.4490387`) |
-| **ERA5-Land Weather** | Copernicus Climate Change Service (C3S) via Open-Meteo Historical API | District centroids above | 60 minutes | 15 minutes (cubic-spline / step interpolation) | C3S / CC BY 4.0 (`doi:10.24381/cds.e2161bac`) |
+| **Mathura** (Uttar Pradesh) | CEEW Smart Meter Dataset (*High frequency smart meter data from two districts in India*, V2.0) | `27.5220° N, 77.7044° E` | 3 minutes | 15 minutes (exact 5-reading mean) | CC0 1.0 Universal (`doi:10.7910/DVN/GOCHJH`) |
+| **Bareilly** (Uttar Pradesh) | CEEW Smart Meter Dataset (*High frequency smart meter data from two districts in India*, V2.0) | `28.3656° N, 79.4779° E` | 3 minutes | 15 minutes (exact 5-reading mean) | CC0 1.0 Universal (`doi:10.7910/DVN/GOCHJH`) |
+| **New Delhi** (Exploratory) | IIIT Delhi & UCLA Faculty Housing Dataset (*Information Strategies for Energy Conservation*, V1.0) | `28.5764° N, 77.2893° E` | 15 minutes (`Table_A2_Final.tab`) | 15 minutes | CC0 1.0 Universal (`doi:10.7910/DVN/7MEXN4`) |
+| **ERA5-Land Weather** | Copernicus Climate Change Service (C3S) via Open-Meteo Historical API | District centroids above | 60 minutes | 15 minutes (backward as-of / 120h operational lag) | CC BY 4.0 / C3S (`doi:10.24381/cds.e2161bac`) |
 
 ---
 
 ## 4. Rebuilding the Full Processed Datasets from Raw Sources
 
-1. **Place raw smart-meter files** in `data/raw/smart_meter/`:
-   - Download the CEEW smart-meter CSV archive from Harvard Dataverse (`doi:10.7910/DVN/N3615P`) into `data/raw/smart_meter/`.
-   - (Optional) Place the IIIT Delhi CSV archive in `data/raw/smart_meter/delhi/` for the exploratory cohort check.
+1. **Acquire and verify raw smart-meter files** in `data/raw/`:
+   - Run `python src/controlled_downloader.py` (or download directly from Harvard Dataverse `doi:10.7910/DVN/GOCHJH` v2.0 into `data/raw/ceew/` and `doi:10.7910/DVN/7MEXN4` v1.0 into `data/raw/iiit_delhi/`).
 2. **Download ERA5-Land hourly weather data:**
    ```bash
-   python scripts/download_weather.py
+   python src/acquire_weather.py
    ```
-3. **Process and filter 3-minute smart-meter records into 15-minute intervals:**
+3. **Run raw data audit and construct 15-minute target and feature tables:**
    ```bash
-   python scripts/process_smart_meter.py
+   python src/audit_raw_data.py
+   python src/construct_targets.py
    ```
-   This step enforces strict `5 x 3-min` window completeness (`valid_obs_count == 5`) and selects the fixed cohort of meters with `>= 90%` temporal coverage (`38` meters in Mathura, `46` meters in Bareilly).
-4. **Align load and meteorological covariates (retrospective and 120-hour operational lag):**
-   ```bash
-   python scripts/align_weather_and_load.py
-   ```
-   This generates all Parquet files in `data/processed/`.
+   This step enforces strict `5 x 3-min` window completeness (`valid_obs_count == 5`), selects the fixed cohort of meters with `>= 90%` temporal coverage (`38` meters in Mathura, `46` meters in Bareilly), aligns retrospective (`t_weather <= T`) and operational (`t_weather <= T - 120h`) ERA5-Land weather covariates, and writes all Parquet files in `data/processed/`.

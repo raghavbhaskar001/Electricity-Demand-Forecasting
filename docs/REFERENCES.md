@@ -28,12 +28,13 @@
 ## 2. Smart Meter & Meteorological Datasets
 
 5. **Agrawal, S., Mani, S., Ganesan, K., & Jain, A. (2021).**  
-   *Smart Meter Data from Mathura and Bareilly Districts, Uttar Pradesh, India.*  
-   Council on Energy, Environment and Water (CEEW), Harvard Dataverse, V1. `https://doi.org/10.7910/DVN/N3615P`
+   *High frequency smart meter data from two districts in India (Mathura and Bareilly).*  
+   Council on Energy, Environment and Water (CEEW), Harvard Dataverse, V2. `https://doi.org/10.7910/DVN/GOCHJH`
 
-6. **Batra, N., Gulati, M., Singh, A., & Srivastava, M. B. (2013 / 2019).**  
-   *It's Different: Insights into home energy consumption in India (Residential Electric Power Dataset, New Delhi).*  
-   IIIT Delhi / Figshare Collection. `https://doi.org/10.6084/m9.figshare.c.4490387`
+6. **Chen, V. L., Delmas, M. A., Locke, S. L., & Singh, A. (2017).**  
+   *Information strategies for energy conservation: A field experiment in India.*  
+   Energy Economics, 68, 215–227. `https://doi.org/10.1016/j.eneco.2017.09.004`  
+   Replication Dataset (IIIT Delhi Faculty Housing, `Table_A2_Final.tab`): Harvard Dataverse, V1. `https://doi.org/10.7910/DVN/7MEXN4`
 
 7. **Muñoz-Sabater, J., Dutra, E., Agustí-Panareda, A., Albergel, C., Arduini, G., Balsamo, G., ... & Thépaut, J.-N. (2021).**  
    *ERA5-Land: A state-of-the-art global reanalysis dataset for land applications.*  
