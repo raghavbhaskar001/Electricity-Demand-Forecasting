@@ -159,9 +159,21 @@ All 195 staged files fall cleanly into the following directory groups:
 - **Fresh Checkpoint Loading & Forward-Pass Test:** Loaded all `18 / 18` verified aggregate checkpoints (`artifacts/checkpoints/agg_*.pt`) from disk in a clean Python process, verified SHA-256 digests (`artifacts/metrics/checkpoint_integrity_manifest.csv`), and executed forward-pass inference across all 18 models (`consumption_only`, `consumption_weather_retro`, `consumption_weather_operational`) with zero warnings or errors.
 
 ### 7.2 Non-Destructive Remote Reconciliation & GitHub Publication
-- **Remote Repository URL:** `https://github.com/raghavbhaskar001/Electricity-Demand-Forecasting.git`
+- **Remote Repository URL:** `https://github.com/raghavbhaskar001/Electricity-Demand-Forecasting` (`https://github.com/raghavbhaskar001/Electricity-Demand-Forecasting.git`)
 - **Pre-Existing Remote Commit Preserved:** `39540e892af4124720fdbe6dec2ea9211ec39d50` (`Initial commit` on `origin/main` containing the initial 2-line `README.md`).
-- **Reconciliation Strategy:** Merged `origin/main` (`39540e8`) into local `main` via `git merge origin/main --allow-unrelated-histories -X ours` (commit `d4c28b8`), preserving the remote commit in the parent graph and retaining the remote introductory summary line at the top of the complete, technically verified `README.md`. No force-push (`--force`) or history rewriting was used.
+- **Local Release Commit:** `01e22b9` (`Initial release: Electricity Demand Forecasting Using Deep Learning (1D CNN, LSTM, CNN-LSTM)`).
+- **DOI Reconciliation Commit:** `e591a46` (`Reconcile Harvard Dataverse dataset DOIs and citations`).
+- **Non-Destructive Merge Commit:** `d4c28b8` (`Merge remote-tracking branch 'origin/main' into main`).
+- **Published Release Commit on `origin/main`:** `9769da628e783d0826d989d2459f24c1fa419361` (fast-forward push `39540e8..9769da6`, zero force-push).
+
+### 7.3 Post-Publication Remote Tree Verification (`origin/main`)
+| Remote Verification Item | Status | Verified Details on `origin/main` (`9769da628e783d0826d989d2459f24c1fa419361`) |
+| :--- | :---: | :--- |
+| **Total Tracked Files Published** | **PASS** | Exactly `195` files in `git ls-tree -r origin/main` (`32.38 MB` total) |
+| **Root Documentation & Metadata** | **PASS** | `README.md`, `LICENSE` (MIT + dataset notices), `CITATION.cff`, `CONTRIBUTING.md`, `requirements.txt`, `.gitignore`, `.python-version`, `.env.example` |
+| **Core Source, Scripts, App & Tests** | **PASS** | `src/` (`20` files), `scripts/` (`11` files), `app/` (`11` files), `tests/` (`8` files), `config/config.yaml`, `notebooks/` (`3` files), `docs/` (`55` files), `AUDIT/` (`7` files) |
+| **Verified Aggregate Checkpoints & Artifacts** | **PASS** | All `18` `artifacts/checkpoints/agg_*.pt` files + `artifacts/metrics/*` (`37` files) + `data/processed/{mathura,bareilly}_features.parquet` |
+| **Zero Sensitive or Unapproved Files Exposed** | **PASS** | `0` `.env` files, `0` secrets, `0` raw CSV archives, `0` large individual Parquets, and `0` unapproved root duplicate/presentation files |
 
 ---
 
