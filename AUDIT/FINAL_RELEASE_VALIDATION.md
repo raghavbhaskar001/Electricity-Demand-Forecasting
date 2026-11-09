@@ -151,7 +151,21 @@ All 195 staged files fall cleanly into the following directory groups:
 
 ---
 
-## 7. Remaining Technical & Operational Risks
+## 7. PyTorch Runtime, Checkpoint Compatibility & Remote Reconciliation
+
+### 7.1 PyTorch Package & Fresh Checkpoint Inference Verification
+- **Installed Package:** `torch==2.15.0+cpu` (`importlib.metadata.version('torch') == '2.15.0'`, installed via `pip`).
+- **Declared Minimum Version (`requirements.txt`):** `torch>=2.6.0` (enforces upstream security fix for `CVE-2025-32434` while preserving full state-dict compatibility across PyTorch 2.x).
+- **Fresh Checkpoint Loading & Forward-Pass Test:** Loaded all `18 / 18` verified aggregate checkpoints (`artifacts/checkpoints/agg_*.pt`) from disk in a clean Python process, verified SHA-256 digests (`artifacts/metrics/checkpoint_integrity_manifest.csv`), and executed forward-pass inference across all 18 models (`consumption_only`, `consumption_weather_retro`, `consumption_weather_operational`) with zero warnings or errors.
+
+### 7.2 Non-Destructive Remote Reconciliation & GitHub Publication
+- **Remote Repository URL:** `https://github.com/raghavbhaskar001/Electricity-Demand-Forecasting.git`
+- **Pre-Existing Remote Commit Preserved:** `39540e892af4124720fdbe6dec2ea9211ec39d50` (`Initial commit` on `origin/main` containing the initial 2-line `README.md`).
+- **Reconciliation Strategy:** Merged `origin/main` (`39540e8`) into local `main` via `git merge origin/main --allow-unrelated-histories -X ours` (commit `d4c28b8`), preserving the remote commit in the parent graph and retaining the remote introductory summary line at the top of the complete, technically verified `README.md`. No force-push (`--force`) or history rewriting was used.
+
+---
+
+## 8. Remaining Technical & Operational Risks
 
 1. **Pending Phase 3.3 Export of Individual Household Binary Checkpoints (`ind_*.pt`):**
    - While all 18 individual household models were trained and evaluated on Google Colab GPU (with full metrics recorded in `artifacts/metrics/training_results.json`), the 18 binary `ind_*.pt` files and `individual_predictions.parquet` remain pending export from Colab. This is transparently disclosed across `README.md`, `docs/LIMITATIONS.md`, and the simulator UI, which restricts live inference to the 18 verified aggregate checkpoints.
